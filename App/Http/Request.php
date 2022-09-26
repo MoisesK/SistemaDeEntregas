@@ -15,7 +15,7 @@ namespace App\Http;
   //Cabeçalho da Requisição
   private array $headers = [];
 
-  public function __construct() :mixed
+  public function __construct()
   {
     $this->queryParams = $_GET ?? [];
     $this->postVars = $_POST ?? [];

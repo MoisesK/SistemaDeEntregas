@@ -24,3 +24,8 @@ Adicionei as classes Home e Page ao Controller de Paginas, onde o Page é respon
 ###### -> feat: Implementação de Rotas HTTP. (Request)
 
 Inicializando a Implementação de Rotas HTTP, criei a classe REQUEST que será responsável por definir a rota das solicitações do usuário.
+<hr>
+
+###### -> feat: Implementação de Rotas HTTP.(Response)
+
+Prosseguindo com a Implementação de Rotas HTTP, criei a classe RESPONSE que retorna para o navegador cabeçalhos e demais informações sobre a requisição.
