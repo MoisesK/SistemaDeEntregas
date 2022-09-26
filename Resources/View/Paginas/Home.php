@@ -1,1 +1,3 @@
-<h1>Bem vindo a Home!</h1>
+<h1>{{HomeName}} </h1>
+<hr>
+<p>{{DescriçãoHome}}</p>
