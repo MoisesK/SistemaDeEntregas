@@ -31,8 +31,17 @@ Inicializando a Implementação de Rotas HTTP, criei a classe REQUEST que será 
 Prosseguindo com a Implementação de Rotas HTTP, criei a classe RESPONSE que retorna para o navegador cabeçalhos e demais informações sobre a requisição.
 <hr>
 
+# 28/09/2022
+
+<hr>
+
 ##### -> feat: Implementação de Rotas HTTP.  (Router) v1
 
+###### -> V1
 Prosseguindo com a Implementação de Rotas HTTP, criei a classe ROUTER onde será responsável pelo direcionamento das rotas.
 
 v1. Metódo construtor e atributos base.
+
+###### -> V2
+
+v2. Métodos de validação para as rotas, incluíndo validação da URI, URL, Método Http...
