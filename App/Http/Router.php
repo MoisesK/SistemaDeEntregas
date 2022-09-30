@@ -61,6 +61,12 @@ class Router{
         $this->addRoute('GET',$route,$params);
     }
 
+    // Método responsável por definir uma rota POST
+    public function post(string $route, array $params = []) :void
+    {
+        $this->addRoute('POST',$route,$params);
+    }
+
     // Retorna array com dados da rota atual e valida a rota
     private function getRoute() 
     {
@@ -104,10 +110,14 @@ class Router{
         // Validação de rotas
         try {
             $route = $this->getRoute(); //obtem a rota atual
-            echo "<pre>";
-            print_r($route);
-            echo "<pre>";
-            exit;
+            
+            // Verifica o controlador
+            if(!isset($route['controller'])): throw new Exception("URL não pôde ser processada", 500); endif;
+            
+            // Argumentos da função
+            $args = [];
+            // Retorna a execução da função
+            return call_user_func_array($route['controller'],$args); 
 
         }catch (Exception $e) 
         {
