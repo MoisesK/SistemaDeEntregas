@@ -61,7 +61,7 @@ class Router{
         $this->addRoute('GET',$route,$params);
     }
 
-    // Retorna array com dados da rota atual
+    // Retorna array com dados da rota atual e valida a rota
     private function getRoute() 
     {
         // Retorna URI
@@ -71,7 +71,7 @@ class Router{
         $xUri = strlen($this->getPrefix()) ? explode($this->getPrefix(),$uri) : [$uri];
 
         //URI sem Prefixo
-        $uri1 = end($xUri);
+        $uriSemPre = end($xUri);
         
         //Metodo dessa requisição
         $httpMethod = $this->request->getHttpMethod();
@@ -80,7 +80,7 @@ class Router{
         foreach($this->routes as $patternroute=>$methods)
         {
             // Verifica se a URI bate com o Padrão
-            if(preg_match($patternroute,$uri1))
+            if(preg_match($patternroute,$uriSemPre))
             {
                 // Verificao método
                 if($methods[$httpMethod]) 
