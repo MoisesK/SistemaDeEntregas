@@ -80,22 +80,22 @@ class Router{
         foreach($this->routes as $patternroute=>$methods)
         {
             // Verifica se a URI bate com o Padrão
-            if(preg_match($patternroute,$uri)){
+            if(preg_match($patternroute,$uri1))
+            {
                 // Verificao método
-                if($methods[$httpMethod]){
+                if($methods[$httpMethod]) 
+                {
                     // Retorno dos Parametros da Rota
                     return $methods[$httpMethod];
                 }
 
-                // Método não permitido
+                // Método não permitido/definido
                 throw new Exception("Método não permitido", 405);
-                
             }
         }
-        
+
         //URL NÃO ENCONTRADA
-        throw new Exception("URL não encontrada", 404);
-    
+        throw new Exception("URL não encontrada", 404);  
     }
 
     // Método responsável por executar a rota
