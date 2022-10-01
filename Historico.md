@@ -45,3 +45,58 @@ v1. Metódo construtor e atributos base.
 ###### -> V2
 
 v2. Métodos de validação para as rotas, incluíndo validação da URI, URL, Método Http...
+
+# 30/09/2022
+
+<hr>
+
+###### -> fix: Router não encontra URL mesmo se existente.
+
+Router de home não estava direcionando a URL independente dos parametros, corrigido o erro e criado variável para receber e retornar a URI sem o prefíxo.
+
+<hr>
+
+###### -> upt: $uriSemPre responsável pela URI sem prefixo
+
+Update na nomenclatura da variável criada no Fix anterior para deixá-la legível.
+
+<hr>
+
+###### -> feat: Rota método POST e Verificações
+
+Adicionado ao ROUTER uma rota para utilização do Método POST e verificação de argumentos para que seja possível retornar a página na função RUN do ROUTER.
+
+<hr>
+
+###### -> feat: .htaccess - reescrita de URL
+
+Adicionei o .htaccess para configurar a reescrita da URL, pois ao passar o parâmetro na url de uma página inexistente não estava caindo no erro configurado no ROUTER.
+
+Com este arquivo ele buscará a pasta com a .index do prefixo passado na URL.
+
+<hr>
+
+###### -> feat: Pages.php para organização das rotas.
+
+Criado pasta ROUTES com arquivo Pages.php para gerenciamento das rotas, evitando assim uma sobrecarga na index.
+
+<hr>
+
+###### -> feat: Controller e View da Página Sobre.
+
+<hr>
+
+###### -> feat: Função define variáveis comuns no projeto.
+
+Criado uma função padrão para que seja possível a definição de variáveis comuns no projeto.
+REAPROVEITAMENTO DE CÓDIGO.
+
+<hr>
+
+###### -> feat: Nav-Bar funcional.
+
+Criado uma NAV-BAR 100% FUNCIONAL utilizando o gerenciamento de rotas.
+
+<hr>
+
+
