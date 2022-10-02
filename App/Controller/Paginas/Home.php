@@ -11,7 +11,7 @@ class Home extends Page{
   {
     //Retorna a View da Home.
     $conteudo = View::render('Paginas/Home',[
-      "HomeName" => "Sistema de Entregas",
+      "HomeName" => "Lista de Entregas",
     ]);
 
     //Retorna a View da Página

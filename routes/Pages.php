@@ -2,6 +2,7 @@
 
 // Gerenciador de páginas
 
+use App\Http\Request;
 use App\Http\Response;
 use App\Controller\Paginas;
 
@@ -16,6 +17,24 @@ $ob->get('/',[
 $ob->get('/sobre',[
     function(){
         return new Response(200, Paginas\Sobre::getSobre());
+    }
+]);
+
+// ROTA CADASTRO DE ENTREGAS
+$ob->get('/novaentrega',[
+    function(){
+        return new Response(200, Paginas\CadastraEntregas::getCadastraEntregas());
+    }
+]);
+
+// ROTA CADASTRO DE ENTREGAS (INSERT)
+$ob->post('/novaentrega',[
+    function(){
+        $request = new Request();
+        echo "<pre>";
+        print_r($request);
+        echo "<pre>";
+        return new Response(200, Paginas\CadastraEntregas::getCadastraEntregas());
     }
 ]);
 
