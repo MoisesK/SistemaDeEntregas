@@ -45,6 +45,7 @@ v1. Metódo construtor e atributos base.
 ###### -> V2
 
 v2. Métodos de validação para as rotas, incluíndo validação da URI, URL, Método Http...
+<hr>
 
 # 30/09/2022
 
@@ -96,6 +97,32 @@ REAPROVEITAMENTO DE CÓDIGO.
 ###### -> feat: Nav-Bar funcional.
 
 Criado uma NAV-BAR 100% FUNCIONAL utilizando o gerenciamento de rotas.
+
+<hr>
+
+# 02/09/2022
+
+<hr>
+
+###### -> feat: Repositorio: gestão de varíaveis de ambiente
+
+Adicionado um reposítorio composer para ajudar na gestão de variáveis de ambiente.
+
+<hr>
+
+###### -> update: Rep. gestão de varíaveis de ambiente.
+
+<hr>
+
+###### -> feat: Inicio Models do sistema.
+
+Criado arquivos das Models de Entregador e Entregas.
+
+<hr>
+
+###### -> feat: Implements páginas de cadastro.
+
+Implementação das páginas(views e controllers) e formulários das páginas que serão utilizadas para o cadastro de novas entregas e entregadores.
 
 <hr>
 
