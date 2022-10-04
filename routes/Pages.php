@@ -31,10 +31,7 @@ $ob->get('/novaentrega',[
 $ob->post('/novaentrega',[
     function(){
         $request = new Request();
-        echo "<pre>";
-        print_r($request);
-        echo "<pre>";
-        return new Response(200, Paginas\CadastraEntregas::getCadastraEntregas());
+        return new Response(200, Paginas\CadastraEntregas::insertEntrega($request));
     }
 ]);
 

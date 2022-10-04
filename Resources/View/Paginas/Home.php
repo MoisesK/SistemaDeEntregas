@@ -3,7 +3,7 @@
 
 <section id="listaEntregas">
     <div class="card text-dark mb-3">
-        <h5 class="card-header text-center">Entregador - Moisés </h5>
+        <h5 class="card-header text-center">Entregador - {{entregador}} </h5>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table ">
@@ -17,10 +17,10 @@
                     </thead>
                     <tbody>
                         <tr class="">
-                            <td>Prazo Da entrega 1</td>
-                            <td>Titulo da Entrega 1</td>
-                            <td>Descrição da Entrega 1</td>
-                            <td>Status da Entrega 1</td>
+                            <td>{{PrazoEntrega}}</td>
+                            <td>{{TituloEntrega}}</td>
+                            <td>{{DescriçãoEntrega}}</td>
+                            <td>{{StatusEntrega}}</td>
                         </tr>
                     </tbody>
                 </table>
