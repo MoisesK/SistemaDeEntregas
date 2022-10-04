@@ -2,17 +2,18 @@
 
 namespace App\Model;
 
+use App\Utilitarios\View;
+use PDOStatement;
 use \WilliamCosta\DatabaseManager\Database;
-class Entrega extends Entregador{
+class Entrega{
     private int $id;
-    private Entregador $entregador;
     private string $titulo;
     private string $prazo;
     private string $descricao;
     private string $status;
     private string $local;
 
-    public function __construct(string $titulo, string $prazo, string $descricao, string $local) 
+    public function newEntrega(string $titulo, string $prazo, string $descricao, string $local) 
     {
         // $this->setEntregador($entregador);
         $this->setTitulo($titulo);
@@ -23,8 +24,57 @@ class Entrega extends Entregador{
 
     }
     
+	function getId(): int {
+		return $this->id;
+	}
+	
+	function getTitulo(): string {
+		return $this->titulo;
+	}
 
-    // Método reponsável por cadastrar uma nova entrega no banco de dados
+	function setTitulo(string $titulo): self {
+		$this->titulo = $titulo;
+		return $this;
+	}
+
+	function getPrazo(): string {
+		return $this->prazo;
+	}
+
+	function setPrazo(string $prazo): self {
+		$this->prazo = $prazo;
+		return $this;
+	}
+
+	function getDescricao(): string {
+		return $this->descricao;
+	}
+
+	function setDescricao(string $descricao): self {
+		$this->descricao = $descricao;
+		return $this;
+	}
+	
+	function getStatus(): string {
+		return $this->status;
+	}
+
+	function setStatus(string $status): self {
+		$this->status = $status;
+		return $this;
+	}
+	
+
+	function getLocal(): string {
+		return $this->local;
+	}
+	
+	function setLocal(string $local): self {
+		$this->local = $local;
+		return $this;
+	}
+
+	// Método reponsável por cadastrar uma nova entrega no banco de dados / CREATE
     public function cadastrar()
     {
         // Insert no Banco de dados
@@ -39,103 +89,15 @@ class Entrega extends Entregador{
         // Sucesso
         return true;
     }
-    
-	/**
-	 * @return int
-	 */
-	function getId(): int {
-		return $this->id;
+
+	/* Método responsável por retornar as Entregas
+	* @return PDOStatement
+	*/
+	public static function getEntregas($where = null, $order = null, $limit = null, $fields = '*') 
+	{
+		return (new Database('entregas'))->select($where,$order,$limit,$fields);
 	}
 	
-	/**
-	 * @return string
-	 */
-	function getTitulo(): string {
-		return $this->titulo;
-	}
-	/**
-	 * @param string $titulo 
-	 * @return Entrega
-	 */
-	function setTitulo(string $titulo): self {
-		$this->titulo = $titulo;
-		return $this;
-	}
-	/**
-	 * @return string
-	 */
-	function getPrazo(): string {
-		return $this->prazo;
-	}
-	/**
-	 * @param string $prazo 
-	 * @return Entrega
-	 */
-	function setPrazo(string $prazo): self {
-		$this->prazo = $prazo;
-		return $this;
-	}
-
-    /**
-	 * @return string
-	 */
-	function getDescricao(): string {
-		return $this->descricao;
-	}
-
-	/**
-	 * @param string $descricao 
-	 * @return Entrega
-	 */
-	function setDescricao(string $descricao): self {
-		$this->descricao = $descricao;
-		return $this;
-	}
-	/**
-	 * @return string
-	 */
-	function getStatus(): string {
-		return $this->status;
-	}
-	/**
-	 * @param string $status 
-	 * @return Entrega
-	 */
-	function setStatus(string $status): self {
-		$this->status = $status;
-		return $this;
-	}
-	
-    /**
-	 * @param Entregador $entregador 
-	 * @return Entrega
-	 */
-	function getEntregador(): self {
-		return $this->entregador;
-	}
-
-	/**
-	 * @param Entregador $entregador 
-	 * @return Entrega
-	 */
-	function setEntregador(Entregador $entregador): self {
-		$this->entregador = $entregador;
-		return $this;
-	}
-	/**
-	 * @return string
-	 */
-	function getLocal(): string {
-		return $this->local;
-	}
-	/**
-	 * @param string $local 
-	 * @return Entrega
-	 */
-	function setLocal(string $local): self {
-		$this->local = $local;
-		return $this;
-	}
 }
 
 

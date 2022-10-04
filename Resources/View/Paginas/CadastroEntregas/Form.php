@@ -21,16 +21,6 @@
             <input type="date" class="form-control" name="prazo-entrega" required>
         </div>
 
-        <div class="form-group">
-            <div class="mb-3 mt-3">
-                <label for="" class="form-label">Entregador</label>
-                <select class="form-select form-select-lg" name="" id="">
-                    <option selected>Selecione o Entregador</option>
-                    <option value="">{{New Delhi}}</option>
-                </select>
-            </div>
-        </div>
-
         <div class="form-group mt-3">
             <button class="btn btn-success" type="submit">CADASTRAR ENTREGA</button>
         </div>

@@ -29,10 +29,13 @@ class CadastraEntregas extends Page{
     $postVars = $request->getPostVars();
     
     // Validação de dados enviados via POST
-   
 
-    // Nova instancia de Entregas
-    $ne = new Entrega($postVars['titulo-entrega'],$postVars['prazo-entrega'],$postVars['descricao-entrega'],$postVars['local-entrega']);
+    // Realizar validação
+
+    // Nova instancia de Entregas para cadastrar Entregas
+    $ne = new Entrega();
+    $ne->newEntrega($postVars['titulo-entrega'],$postVars['prazo-entrega'],$postVars['descricao-entrega'],$postVars['local-entrega']);
+    
     $ne->cadastrar();
 
     // Retornar os dados
