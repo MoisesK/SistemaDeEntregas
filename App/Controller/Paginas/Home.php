@@ -35,18 +35,20 @@ class Home extends Page{
 		  // Renderiza os Items
 		  while($obEntrega = $results->fetchObject(Entrega::class)){
 			  $itens .= View::render('Paginas/Home/Itens',[
-		  "PrazoEntrega" => date('d/m/y',strtotime($obEntrega->getPrazo())),
-		  "TituloEntrega" => $obEntrega->getTitulo(),
-		  "DescriçãoEntrega" => $obEntrega->getDescricao(),
-      "LocalEntrega" => $obEntrega->getLocal(),
-		  "StatusEntrega" => $obEntrega->getStatus(),
-		]);
+			"PrazoEntrega" => date('d/m/y',strtotime($obEntrega->getPrazo())),
+			"TituloEntrega" => $obEntrega->getTitulo(),
+			"DescriçãoEntrega" => $obEntrega->getDescricao(),
+			"LocalEntrega" => $obEntrega->getLocal(),
+			"StatusEntrega" => $obEntrega->getStatus(),
+			"Ações" => View::render('Paginas/Home/Acoes')
+			]);
 	  }
   
 	  // Retorna os itens
 	  return $itens;
 	}
 
+	//Método responsável por Excluir uma entrega
 
 
 }

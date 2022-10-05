@@ -9,7 +9,7 @@ class CadastraEntregas extends Page{
 
   // Método responsável por renderizar os itens de entregas
 
-//Metodo qu retornar o conteúdo(View) da PÁGINA HOME;
+//Metodo que retornar o conteúdo(View) da PÁGINA HOME;
   public static function getCadastraEntregas() :string
   {
     //Retorna a View da Home.
@@ -22,7 +22,7 @@ class CadastraEntregas extends Page{
     return parent::getPage("Cadastrar Entregas > E2000", $conteudo);
   }
 
-  //
+  // Método que recebe da página e insere uma nova entrega
   public static function insertEntrega($request) :string
   {
     // Dados recebidos do POST
@@ -30,7 +30,7 @@ class CadastraEntregas extends Page{
     
     // Validação de dados enviados via POST
 
-    // Realizar validação
+    // CRIAR validação
 
     // Nova instancia de Entregas para cadastrar Entregas
     $ne = new Entrega();
