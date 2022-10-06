@@ -24,6 +24,6 @@
         <div class="form-group mt-3">
             <button class="btn btn-success" type="submit">CADASTRAR ENTREGA</button>
         </div>
-        
+
     </form>
 </section>

@@ -34,9 +34,3 @@ $ob->post('/novaentrega',[
         return new Response(200, Paginas\CadastraEntregas::insertEntrega($request));
     }
 ]);
-
-
-
-
-
-?>

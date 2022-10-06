@@ -12,7 +12,3 @@ include __DIR__ .'/routes/Pages.php';
 
 // Imprime as Páginas
 $ob->run()->sendResponse();
-
-
-
-?>

@@ -57,9 +57,3 @@ class Response{
     }
   }
 }
-
-
-
-
-
- ?>

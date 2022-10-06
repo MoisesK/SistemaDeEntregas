@@ -5,7 +5,8 @@ namespace App\Http;
 use \Closure;
 use \Exception;
 
-class Router{
+class Router
+{
     //URL Completa do projeto (raiz)
     private string $url = '';
     //Prefixo de todas as rotas
@@ -14,7 +15,7 @@ class Router{
     private array $routes = [];
     //Instancia de requisição
     private Request $request;
-   
+
     public function __construct(string $url)
     {
         $this->request = new Request($this);
@@ -27,7 +28,7 @@ class Router{
         return $this->prefix;
     }
     //Método que define o prefixo das rotas
-    private function setPrefix() :void
+    private function setPrefix(): void
     {
         //Info da Url
         $parseUrl = parse_url($this->url);
@@ -36,11 +37,11 @@ class Router{
     }
 
     // Método responsável por adicionar uma rota na Classe
-    private function addRoute(string $method,string $route,array $params = []) :void
+    private function addRoute(string $method, string $route, array $params = []): void
     {
         // Valida Parametros
-        foreach($params as $chave=>$valor){
-            if($valor instanceof Closure){
+        foreach ($params as $chave => $valor) {
+            if ($valor instanceof Closure) {
                 //Método para identificar o parametro passado
                 $params['controller'] = $valor;
                 unset($params[$chave]);
@@ -48,49 +49,45 @@ class Router{
         }
 
         // Padrão de validação da URL
-        $patternRoute = '/^'.str_replace('/','\/',$route).'$/';
+        $patternRoute = '/^' . str_replace('/', '\/', $route) . '$/';
 
         // Adiciona a rota á classe
         $this->routes[$patternRoute][$method] = $params;
-
     }
 
     // Método responsável por definir uma rota GET
-    public function get(string $route, array $params = []) :void
+    public function get(string $route, array $params = []): void
     {
-        $this->addRoute('GET',$route,$params);
+        $this->addRoute('GET', $route, $params);
     }
 
     // Método responsável por definir uma rota POST
-    public function post(string $route, array $params = []) :void
+    public function post(string $route, array $params = []): void
     {
-        $this->addRoute('POST',$route,$params);
+        $this->addRoute('POST', $route, $params);
     }
 
     // Retorna array com dados da rota atual e valida a rota
-    private function getRoute() 
+    private function getRoute()
     {
         // Retorna URI
         $uri = $this->request->getUri();
 
         //Reduz o prefixo da URI
-        $xUri = strlen($this->getPrefix()) ? explode($this->getPrefix(),$uri) : [$uri];
+        $xUri = strlen($this->getPrefix()) ? explode($this->getPrefix(), $uri) : [$uri];
 
         //URI sem Prefixo
         $uriSemPre = end($xUri);
-        
+
         //Metodo dessa requisição
         $httpMethod = $this->request->getHttpMethod();
 
         //Valida as rotas
-        foreach($this->routes as $patternroute=>$methods)
-        {
+        foreach ($this->routes as $patternroute => $methods) {
             // Verifica se a URI bate com o Padrão
-            if(preg_match($patternroute,$uriSemPre))
-            {
+            if (preg_match($patternroute, $uriSemPre)) {
                 // Verificao método
-                if($methods[$httpMethod]) 
-                {
+                if ($methods[$httpMethod]) {
                     // Retorno dos Parametros da Rota
                     return $methods[$httpMethod];
                 }
@@ -101,7 +98,7 @@ class Router{
         }
 
         //URL NÃO ENCONTRADA
-        throw new Exception("URL não encontrada", 404);  
+        throw new Exception("URL não encontrada", 404);
     }
 
     // Método responsável por executar a rota
@@ -110,22 +107,17 @@ class Router{
         // Validação de rotas
         try {
             $route = $this->getRoute(); //obtem a rota atual
-            
+
             // Verifica o controlador
-            if(!isset($route['controller'])): throw new Exception("URL não pôde ser processada", 500); endif;
-            
+            if (!isset($route['controller'])) : throw new Exception("URL não pôde ser processada", 500);
+            endif;
+
             // Argumentos da função
             $args = [];
             // Retorna a execução da função
-            return call_user_func_array($route['controller'],$args); 
-
-        }catch (Exception $e) 
-        {
-            return new Response($e->getCode(),$e->getMessage());
+            return call_user_func_array($route['controller'], $args);
+        } catch (Exception $e) {
+            return new Response($e->getCode(), $e->getMessage());
         }
     }
-    
-
-
-	
 }

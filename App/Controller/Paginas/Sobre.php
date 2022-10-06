@@ -21,7 +21,3 @@ class Sobre extends Page{
   }
 
 }
-
-
-
- ?>

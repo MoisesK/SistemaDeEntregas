@@ -5,7 +5,6 @@ namespace App\Http;
   class Request{
 
   //Atributo HTTP da requisição
-  private Router $router;
   private string $httpMethod;
   //URI da página
   private string $uri;
@@ -16,9 +15,8 @@ namespace App\Http;
   //Cabeçalho da Requisição
   private array $headers = [];
 
-  public function __construct($router)
+  public function __construct()
   {
-    $this->router = $router;
     $this->queryParams = $_GET ?? [];
     $this->postVars = $_POST ?? [];
     $this->headers = getallheaders();
@@ -69,5 +67,3 @@ namespace App\Http;
 
 
   }
-
- ?>

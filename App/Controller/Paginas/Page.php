@@ -28,6 +28,3 @@ class Page{
     return view::render("Paginas/footer");
   }
 }
-
-
- ?>

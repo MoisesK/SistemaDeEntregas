@@ -20,7 +20,7 @@
                     {{Items}}
                 </table>
             </div>
-            
+
         </div>
     </div>
 
