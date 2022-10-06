@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Controller\Paginas;
+namespace App\Controller\Pages;
 
-use App\Utilitarios\View;
+use App\Util\View;
 
-class Sobre extends Page{
-
-//Metodo qu retornar o conteúdo(View) da PÁGINA SOBRE;
-  public static function getSobre() :string
+class About extends Page
+{
+  public static function getAbout(): string
   {
-    //Retorna a View da Sobre.
-    $conteudo = View::render('Paginas/sobre',[
+    //Metodo qu retornar o conteúdo(View) da PÁGINA SOBRE;
+    $conteudo = View::render('Pages/about', [
       "PageName" => "Sobre o Projeto",
       "Descrição" => "Seja bem vindo ao Entregas 2000,
       o Sistema de entregas perfeito para seu negócio."
@@ -19,5 +18,4 @@ class Sobre extends Page{
     //Retorna a View da Página
     return parent::getPage("Sobre > E2000", $conteudo);
   }
-
 }

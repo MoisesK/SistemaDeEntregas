@@ -2,55 +2,48 @@
 
 namespace App\Http;
 
-class Response{
-
-  //Código do status HTTP
+class Response
+{
   private int $httpCode = 200;
-  //Cabeçalho do Response
   private array $headers = [];
-  //Tipo de Conteúdo que está sendo Retornado
   private string $contentType = 'text/html';
-  //Conteúdo do Response
   private mixed $content;
 
-  //Metodo responsável por inciar a classe e definir os valores
-  public function __construct($httpCode,$content,$contentType = 'text/html')
+  public function __construct($httpCode, $content, $contentType = 'text/html')
   {
-  $this->httpCode = $httpCode;
-  $this->content = $content;
-  $this->setContentType($contentType);
-
+    $this->httpCode = $httpCode;
+    $this->content = $content;
+    $this->setContentType($contentType);
   }
-  //Método responsável por alterar o ContentType
+
   public function setContentType($contentType)
   {
     $this->contentType = $contentType;
-    $this->addHeader('Content-Type',$contentType);
+    $this->addHeader('Content-Type', $contentType);
   }
 
-  //Metodo responsável por adicionar um registro no cabeçalho
-  public function addHeader(string $chave,string $valor){
+  public function addHeader(string $chave, string $valor)
+  {
     $this->headers[$chave] = $valor;
   }
 
-  //Método responsável por enviar os headers para o navegador
-  public function sendHeaders(){
-    //status
+  public function sendHeaders()
+  {
+
     http_response_code($this->httpCode);
 
-    //enviar headers
-    foreach($this->headers as $key=>$value){
-      header($key.': '.$value);
+    foreach ($this->headers as $key => $value) {
+      header($key . ': ' . $value);
     }
   }
 
-  //Método repsonsável por enviar a resposta para o usuário "imprime o conetúdo"
-  public function sendResponse(){
-    //envia os headers
+  public function sendResponse()
+  { //Método repsonsável por enviar a resposta para o usuário "imprime o conteúdo"
+    
     $this->sendHeaders();
 
     //imprime o conteúdo
-    switch ($this->contentType){
+    switch ($this->contentType) {
       case ($this->contentType = 'text/html'):
         echo $this->content;
         exit;

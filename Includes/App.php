@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Utilitarios\View;
+use App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
 

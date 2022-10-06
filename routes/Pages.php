@@ -4,26 +4,28 @@
 
 use App\Http\Request;
 use App\Http\Response;
-use App\Controller\Paginas;
+use App\Controller\Pages;
 
 // ROTA HOME
 $ob->get('/',[
     function(){
-        return new Response(200, Paginas\Home::getHome());
+        return new Response(200, Pages\Home::getHome());
     }
 ]);
+
+
 
 // ROTA SOBRE
 $ob->get('/sobre',[
     function(){
-        return new Response(200, Paginas\Sobre::getSobre());
+        return new Response(200, Pages\About::getAbout());
     }
 ]);
 
 // ROTA CADASTRO DE ENTREGAS
 $ob->get('/novaentrega',[
     function(){
-        return new Response(200, Paginas\CadastraEntregas::getCadastraEntregas());
+        return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries());
     }
 ]);
 
@@ -31,6 +33,6 @@ $ob->get('/novaentrega',[
 $ob->post('/novaentrega',[
     function(){
         $request = new Request();
-        return new Response(200, Paginas\CadastraEntregas::insertEntrega($request));
+        return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
     }
 ]);
