@@ -12,7 +12,7 @@ class RegisterDeliveries extends Page
   {
     //Metodo que retornar o conteúdo(View) da PÁGINA HOME;
 
-    $content = View::render('Paginas/RegisterDeliveries', [
+    $content = View::render('Pages/RegisterDeliveries', [
       "HomeName" => "Registro de Entregas",
       "FormDeliveries" => View::render('Pages/RegisterDeliveries/Form'),
     ]);
@@ -28,10 +28,10 @@ class RegisterDeliveries extends Page
 
     $ne = new Delivery();
     $ne->newDelivery(
-      $postVars['titulo-entrega'],
-      $postVars['prazo-entrega'],
-      $postVars['descricao-entrega'],
-      $postVars['local-entrega']
+      $postVars['title-delivery'],
+      $postVars['deadline-delivery'],
+      $postVars['description-delivery'],
+      $postVars['place-delivery']
     );
 
     $ne->create();

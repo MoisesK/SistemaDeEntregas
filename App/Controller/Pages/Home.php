@@ -2,7 +2,7 @@
 
 namespace App\Controller\Pages;
 
-use App\Utilitarios\View;
+use App\Util\View;
 use App\Model\Delivery;
 
 
@@ -21,13 +21,13 @@ class Home extends Page
 
 	public static function getDeliveryItems()
 	{
-		$itens = '';
+		$items = '';
 
 		$results = Delivery::getDelivery(null, 'id DESC');
 
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
-			$itens .= View::render('Paginas/Home/Itens', [
+			$items .= View::render('Paginas/Home/Itens', [
 				"PrazoEntrega" => date('d/m/y', strtotime($obDelivery->getDeadline())),
 				"TituloEntrega" => $obDelivery->getTitle(),
 				"DescriçãoEntrega" => $obDelivery->getDescript(),
@@ -36,7 +36,10 @@ class Home extends Page
 				"Ações" => View::render('Pages/Home/Actions')
 			]);
 		}
+		echo "<pre>";
+		print_r($items);
+		echo "</pre>";
 
-		return $itens;
+		return $items;
 	}
 }

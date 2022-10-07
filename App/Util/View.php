@@ -4,40 +4,35 @@ namespace App\Util;
 
 class View
 {
-
   private static array $vars = [];
 
-  // Método responsável por definir os dados iniciais da classe
+
   public static function init($vars = [])
-  {
+  {   // Método responsável por definir os dados iniciais da classe
     self::$vars = $vars;
   }
 
-  // Metodo responsável por retornar o conteúdo de uma view.
   private static function getContentView($view): string
   {
-    $arquivo = __DIR__ . '/../../Resources/View/' . $view . '.php';
+    $archive = __DIR__ . '/../../Resources/View/' . $view . '.php';
 
-    //Verifica se o repositório existe e retorna ele.
-    return file_exists($arquivo) ? file_get_contents($arquivo) : '';
+    //Verifica se o arquivo existe e retorna ele.
+    return file_exists($archive) ? file_get_contents($archive) : '';
   }
 
-  // Método responsável por retornar o conteúdo renderizado de uma view.
   public static function render($view, $vars = []): string
-  {
-    //Conteúdo da VIEW
-    $conteudoView = self::getContentView($view);
+  { // Método responsável por retornar o conteúdo renderizado de uma view.
 
-    //Merge de variáveis do layout da view
+    $contentView = self::getContentView($view);
+
     $vars = array_merge(self::$vars, $vars);
-    //Chaves do array de variaveis
 
-    $chaves = array_keys($vars);
-    $chaves = array_map(function ($item) {
+    $keys = array_keys($vars);
+    $keys = array_map(function ($item) {
       return '{{' . $item . '}}';
-    }, $chaves);
+    }, $keys);
 
     //Retorna o conteúdo Renderizdo
-    return str_replace($chaves, array_values($vars), $conteudoView);
+    return str_replace($keys, array_values($vars), $contentView);
   }
 }

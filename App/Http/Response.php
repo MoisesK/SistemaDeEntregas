@@ -7,7 +7,7 @@ class Response
   private int $httpCode = 200;
   private array $headers = [];
   private string $contentType = 'text/html';
-  private mixed $content;
+  private string $content;
 
   public function __construct($httpCode, $content, $contentType = 'text/html')
   {

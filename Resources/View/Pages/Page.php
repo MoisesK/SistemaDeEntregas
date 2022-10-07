@@ -15,7 +15,7 @@
   <div class="container">
     {{header}}
 
-    {{conteudo}}
+    {{content}}
 
     {{footer}}
   </div>

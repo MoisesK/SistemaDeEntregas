@@ -2,8 +2,6 @@
 
 namespace App\Model;
 
-use App\Util\View;
-use PDOStatement;
 use \WilliamCosta\DatabaseManager\Database;
 
 class Delivery
@@ -24,65 +22,60 @@ class Delivery
 		$this->setPlace($place);
 	}
 
-	function getId(): int
+	public function getId(): int
 	{
 		return $this->id;
 	}
 
-	function getTitle(): string
+	public function getTitle(): string
 	{
 		return $this->title;
 	}
 
-	function setTitle(string $title): self
+	private function setTitle(string $title)
 	{
 		$this->title = $title;
-		return $this;
 	}
 
-	function getDeadline(): string
+	public function getDeadline(): string
 	{
-		return $this->Deadline;
+		return $this->deadline;
 	}
 
-	function setDeadline(string $Deadline): self
+	private function setDeadline(string $Deadline)
 	{
-		$this->Deadline = $Deadline;
-		return $this;
+		$this->deadline = $Deadline;
 	}
 
-	function getDescript(): string
+	public function getDescript(): string
 	{
-		return $this->Descript;
+		return $this->descript;
 	}
 
-	function setDescript(string $Descript): self
+	private function setDescript(string $Descript)
 	{
-		$this->Descript = $Descript;
-		return $this;
+		$this->descript = $Descript;
 	}
 
-	function getStats(): string
+	public function getStats(): string
 	{
 		return $this->stats;
 	}
 
-	function setStats(string $stats): self
+	private function setStats(string $stats)
 	{
 		$this->stats = $stats;
-		return $this;
 	}
 
 
-	function getPlace(): string
+	public function getPlace(): string
 	{
 		return $this->place;
 	}
 
-	function setPlace(string $place): self
+	private function setPlace(string $place)
 	{
 		$this->place = $place;
-		return $this;
 	}
 
 	public function create()

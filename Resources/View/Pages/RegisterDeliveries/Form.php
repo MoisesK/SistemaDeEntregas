@@ -3,22 +3,22 @@
 
         <div class="form-group mt-3">
             <label>Titulo da Entrega</label>
-            <input type="text" class="form-control" name="titulo-entrega" required>
+            <input type="text" class="form-control" name="title-delivery" required>
         </div>
 
         <div class="form-group mt-3">
             <label>Descrição da Entrega</label>
-            <textarea class="form-control" rows="3" name="descricao-entrega" required></textarea>
+            <textarea class="form-control" rows="3" name="description-delivery" required></textarea>
         </div>
 
         <div class="form-group mt-3">
             <label>Local da Entrega</label>
-            <input type="text" class="form-control" name="local-entrega" required>
+            <input type="text" class="form-control" name="place-delivery" required>
         </div>
 
         <div class="form-group mt-3">
             <label>Prazo da Entrega</label>
-            <input type="date" class="form-control" name="prazo-entrega" required>
+            <input type="date" class="form-control" name="deadline-delivery" required>
         </div>
 
         <div class="form-group mt-3">

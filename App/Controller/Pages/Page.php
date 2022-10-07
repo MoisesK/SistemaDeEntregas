@@ -12,7 +12,7 @@ class Page
     return View::render('Pages/Page', [
       "title" => $title,
       "header" => self::getHeader(),
-      "conteúdo" => $content,
+      "content" => $content,
       "footer" => self::getFooter()
     ]);
   }
@@ -20,11 +20,11 @@ class Page
 
   private static function getHeader(): string
   {
-    return View::render("Pages/header");
+    return View::render("Pages/Header");
   }
 
   private static function getFooter(): string
   {
-    return View::render("Pages/footer");
+    return View::render("Pages/Footer");
   }
 }
