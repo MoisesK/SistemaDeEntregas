@@ -7,11 +7,12 @@ use \WilliamCosta\DatabaseManager\Database;
 class Delivery
 {
 	private int $id;
-	private string $title;
-	private string $deadline;
-	private string $descript;
-	private string $stats;
-	private string $place;
+	private string $title = '';
+	private string $deadline = '';
+	private string $descript = '';
+	private string $stats = '';
+	private string $place = '';
+
 
 	public function newDelivery(string $title, string $deadline, string $descript, string $place)
 	{
@@ -21,6 +22,8 @@ class Delivery
 		$this->setStats("Pendente");
 		$this->setPlace($place);
 	}
+
+
 
 	public function getId(): int
 	{
@@ -37,7 +40,7 @@ class Delivery
 		$this->title = $title;
 	}
 
-	public function getDeadline(): string
+	public function getDeadline()
 	{
 		return $this->deadline;
 	}
@@ -81,11 +84,11 @@ class Delivery
 	public function create()
 	{
 		$this->id = (new Database('entregas'))->insert([
-			'titulo' => $this->title,
-			'prazo' => $this->deadline,
-			'descricao' => $this->descript,
-			'status' => $this->stats,
-			'local' => $this->place
+			'title' => $this->title,
+			'deadline' => $this->deadline,
+			'descript' => $this->descript,
+			'stats' => $this->stats,
+			'place' => $this->place
 		]);
 
 		return true;

@@ -24,21 +24,19 @@ class Home extends Page
 		$items = '';
 
 		$results = Delivery::getDelivery(null, 'id DESC');
-
+		
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
-			$items .= View::render('Paginas/Home/Itens', [
-				"PrazoEntrega" => date('d/m/y', strtotime($obDelivery->getDeadline())),
-				"TituloEntrega" => $obDelivery->getTitle(),
-				"DescriçãoEntrega" => $obDelivery->getDescript(),
-				"LocalEntrega" => $obDelivery->getPlace(),
-				"StatusEntrega" => $obDelivery->getStats(),
-				"Ações" => View::render('Pages/Home/Actions')
+			
+			$items .= View::render('Pages/Home/Items', [
+				"Deadline" => date('d/m/y', strtotime($obDelivery->getDeadline())),
+				"Title" => $obDelivery->getTitle(),
+				"Description" => $obDelivery->getDescript(),
+				"Place" => $obDelivery->getPlace(),
+				"Stats" => 'teste',
+				"Actions" => View::render('Pages/Home/Actions')
 			]);
 		}
-		echo "<pre>";
-		print_r($items);
-		echo "</pre>";
 
 		return $items;
 	}

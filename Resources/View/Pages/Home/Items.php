@@ -1,11 +1,11 @@
 <tbody>
-    <tr class="">
-        <td>{{PrazoEntrega}}</td>
-        <td>{{TituloEntrega}}</td>
-        <td>{{DescriçãoEntrega}}</td>
-        <td>{{LocalEntrega}}</td>
-        <td>{{StatusEntrega}}</td>
-        <td style="display:flex; justify-content:space-evenly;">{{Ações}}</td>
+    <tr>
+        <td>{{Deadline}}</td>
+        <td>{{Title}}</td>
+        <td>{{Description}}</td>
+        <td>{{Place}}</td>
+        <td>{{Stats}}</td>
+        <td style="display:flex; justify-content:space-evenly;">{{Actions}}</td>
 
     </tr>
 </tbody>

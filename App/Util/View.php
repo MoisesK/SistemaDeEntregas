@@ -5,8 +5,6 @@ namespace App\Util;
 class View
 {
   private static array $vars = [];
-
-
   public static function init($vars = [])
   {   // Método responsável por definir os dados iniciais da classe
     self::$vars = $vars;
