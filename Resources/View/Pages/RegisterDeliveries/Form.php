@@ -18,7 +18,7 @@
 
         <div class="form-group mt-3">
             <label>Prazo da Entrega</label>
-            <input type="date" class="form-control" name="deadline-delivery" required>
+            <input type="datetime-local" class="form-control" name="deadline-delivery" required>
         </div>
 
         <div class="form-group mt-3">

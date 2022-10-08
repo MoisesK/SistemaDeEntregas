@@ -29,11 +29,11 @@ class Home extends Page
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
 			
 			$items .= View::render('Pages/Home/Items', [
-				"Deadline" => date('d/m/y', strtotime($obDelivery->getDeadline())),
+				"Deadline" => date('H:i d/m/yy' , strtotime($obDelivery->getDeadline())),
 				"Title" => $obDelivery->getTitle(),
 				"Description" => $obDelivery->getDescript(),
 				"Place" => $obDelivery->getPlace(),
-				"Stats" => 'teste',
+				"Stats" => $obDelivery->getStats(),
 				"Actions" => View::render('Pages/Home/Actions')
 			]);
 		}
