@@ -6,6 +6,9 @@ use App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
 
+//Inicia e carrega SESSÃO de mensagens
+View::sSession();
+
 // Carrega Variaveis de ambiente
 Environment::load(__DIR__ . '/../');
 

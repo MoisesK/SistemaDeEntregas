@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .'/Includes/App.php';
+require_once __DIR__ . '/Requires/App.php';
 
 use App\Http\Router;
 
@@ -8,7 +8,7 @@ use App\Http\Router;
 $ob = new Router(URL);
 
 // Inclui as Rotas de Páginas
-include __DIR__ .'/routes/Pages.php';
+include __DIR__ . '/routes/Pages.php';
 
 // Imprime as Páginas
 $ob->run()->sendResponse();

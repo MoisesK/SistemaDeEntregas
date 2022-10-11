@@ -2,10 +2,9 @@
 
 namespace App\Controller\Pages;
 
-use App\Http\Response;
+
 use App\Util\View;
 use App\Model\Delivery;
-use Exception;
 use PHP_CodeSniffer\Filters\Filter;
 
 class RegisterDeliveries extends Page
@@ -13,7 +12,7 @@ class RegisterDeliveries extends Page
 
   public static function getRegisterDeliveries(): string
   {
-    //Metodo que retornar o conteúdo(View) da PÁGINA HOME;
+    //Metodo que retornar o conteúdo(View) da PÁGINA Cadastro;
 
     $content = View::render('Pages/RegisterDeliveries', [
       "HomeName" => "Registro de Entregas",
@@ -44,6 +43,10 @@ class RegisterDeliveries extends Page
     );
 
     $ne->create();
+
+    $_SESSION["mensagem"] = "Entrega Cadastrada com Sucesso!";
+    
+    header("Refresh: 0; url=/SistemaDeEntregas/");
 
     // Retornar os dados
     return self::getRegisterDeliveries();

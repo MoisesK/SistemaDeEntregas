@@ -14,7 +14,7 @@
                             <th scope="col">Descrição da Entrega</th>
                             <th scope="col">Local da Entrega</th>
                             <th scope="col">Status da Entrega</th>
-                            <th scope="col">Acões</th>
+                            <th scope="col-2">Ações</th>
                         </tr>
                     </thead>
                     {{Items}}

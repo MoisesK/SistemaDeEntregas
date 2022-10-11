@@ -5,6 +5,18 @@ namespace App\Util;
 class View
 {
   private static array $vars = [];
+
+  public static function sSession()
+  {
+    //Inicia Sessão e Carrega mensagens
+    session_start();
+
+    if (isset($_SESSION["mensagem"])) {
+      echo $_SESSION["mensagem"];
+      session_unset();
+    }
+  }
+
   public static function init($vars = [])
   {   // Método responsável por definir os dados iniciais da classe
     self::$vars = $vars;

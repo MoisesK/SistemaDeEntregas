@@ -24,7 +24,6 @@ class Delivery
 	}
 
 
-
 	public function getId(): int
 	{
 		return $this->id;
@@ -81,6 +80,11 @@ class Delivery
 		$this->place = $place;
 	}
 
+	public static function getDelivery($where = null, $order = null, $limit = null, $fields = '*')
+	{
+		return (new Database('entregas'))->select($where, $order, $limit, $fields);
+	}
+
 	public function create()
 	{
 		$this->id = (new Database('entregas'))->insert([
@@ -94,8 +98,10 @@ class Delivery
 		return true;
 	}
 
-	public static function getDelivery($where = null, $order = null, $limit = null, $fields = '*')
+	public function delete($id)
 	{
-		return (new Database('entregas'))->select($where, $order, $limit, $fields);
+		$item = (new Database('entregas'))->delete("id=".$id);
+
+		return $item;
 	}
 }

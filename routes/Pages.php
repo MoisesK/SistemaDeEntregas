@@ -13,6 +13,14 @@ $ob->get('/',[
     }
 ]);
 
+// ROTA DELETAR/EDITAR ENTREGAS
+$ob->post('/',[
+    function(){
+        $request = new Request();
+        return new Response(200, Pages\Home::acoesDelivery($request));
+    }
+]);
+
 
 
 // ROTA SOBRE

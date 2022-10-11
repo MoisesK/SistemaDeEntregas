@@ -1,6 +1,5 @@
 <section id="form">
     <form method="POST">
-
         <div class="form-group mt-3">
             <label>Titulo da Entrega</label>
             <input type="text" class="form-control" name="title-delivery" required>
