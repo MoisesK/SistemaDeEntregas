@@ -46,7 +46,7 @@ class RegisterDeliveries extends Page
 
     $_SESSION["mensagem"] = "Entrega Cadastrada com Sucesso!";
     
-    header("Refresh: 0; url=/SistemaDeEntregas/");
+    header("Refresh: 0; url=/");
 
     // Retornar os dados
     return self::getRegisterDeliveries();
