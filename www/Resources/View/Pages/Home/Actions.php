@@ -1,1 +1,2 @@
-    {{Buttons}}
+    {{ButtonDelete}}
+    {{ButtonEdit}}

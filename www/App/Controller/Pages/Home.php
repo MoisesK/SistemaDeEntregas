@@ -39,7 +39,12 @@ class Home extends Page
 				"Place" => $obDelivery->getPlace(),
 				"Stats" => $obDelivery->getStats(),
 				"Actions" => View::render('Pages/Home/Actions', [
-					"Buttons" => View::render('Pages/Home/ActionButtons', ["Id" => $obDelivery->getId(),]),
+					// "ButtonDelete" => View::render('Pages/Home/ActionButtons', ["Id" => $obDelivery->getId(),]),
+					"ButtonDelete" => View::render('Modals/ModalDelete', [
+						"id" => $obDelivery->getId(),
+						"title" => $obDelivery->getTitle()
+					]),
+					"ButtonEdit" => View::render('Modals/ModalEdit'),
 				])
 			]);
 		}
