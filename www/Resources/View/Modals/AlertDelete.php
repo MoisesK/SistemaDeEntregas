@@ -1,3 +1,3 @@
 <div class="alert alert-danger" role="alert">
-  Deletado com Sucesso!
+  Entrega Deletada com Sucesso!
 </div>
