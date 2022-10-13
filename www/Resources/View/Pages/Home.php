@@ -1,6 +1,6 @@
 <h1>{{HomeName}} </h1>
 <hr>
-
+{{Alerts}}
 <section id="listaEntregas">
     <div class="card text-dark mb-3">
         <h5 class="card-header text-center">Entregas</h5>

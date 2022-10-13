@@ -1,8 +1,8 @@
 <?php
 
-
 namespace App\Controller\Pages;
 
+use App\Model\Helper;
 use App\Http\Response;
 use App\Util\View;
 use App\Model\Delivery;
@@ -16,6 +16,7 @@ class Home extends Page
 		//Metodo que retornar o conteúdo(View) da PÁGINA HOME
 		$content = View::render('Pages/Home', [
 			"HomeName" => "Lista de Entregas",
+			"Alerts" => Helper::getSMessage(),
 			"Items" => self::getDeliveryItems(),
 		]);
 
@@ -50,15 +51,17 @@ class Home extends Page
 	{
 		$postVars = $request->getPostVars();
 
+		session_start();
+
 		switch ($postVars) {
 			case isset($postVars['deleteButton']):
 				$dl = new Delivery();
 				$dl->delete($postVars['deleteButton']);
-				$_SESSION['mensagem'] = "Item Excluído com Sucesso!";
+				$_SESSION['Delete'] = "Item Excluído com Sucesso!";
 				break;
 
 			case isset($postVars['editButton']):
-				$_SESSION['mensagem'] = "Item Editado com Sucesso!";
+				$_SESSION['Edit'] = "Item Editado com Sucesso!";
 				break;
 		}
 

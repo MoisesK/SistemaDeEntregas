@@ -43,8 +43,9 @@ class RegisterDeliveries extends Page
     );
 
     $ne->create();
-
-    $_SESSION["mensagem"] = "Entrega Cadastrada com Sucesso!";
+    
+    session_start();
+    $_SESSION["Create"] = "Entrega Cadastrada com Sucesso!";
     
     header("Refresh: 0; url=/");
 
