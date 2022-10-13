@@ -27,7 +27,7 @@ class Home extends Page
 	{
 		$items = '';
 
-		$results = Delivery::getDelivery(null, 'id DESC');
+		$results = Delivery::read(null, 'id DESC');
 
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {

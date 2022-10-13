@@ -1,3 +1,3 @@
 <div class="alert alert-success" role="alert">
-  Cadastrado com Sucesso!
+  Entrega Cadastrada com Sucesso!
 </div>

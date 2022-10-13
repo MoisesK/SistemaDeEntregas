@@ -80,7 +80,7 @@ class Delivery
 		$this->place = $place;
 	}
 
-	public static function getDelivery($where = null, $order = null, $limit = null, $fields = '*')
+	public static function read($where = null, $order = null, $limit = null, $fields = '*')
 	{
 		return (new Database('entregas'))->select($where, $order, $limit, $fields);
 	}
