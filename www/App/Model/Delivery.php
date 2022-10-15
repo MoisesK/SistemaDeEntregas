@@ -14,12 +14,12 @@ class Delivery
 	private string $place = '';
 
 
-	public function newDelivery(string $title, string $deadline, string $descript, string $place)
+	public function newDelivery(string $title, string $deadline, string $descript, string $place, string $stats = "Pendente")
 	{
 		$this->setTitle($title);
 		$this->setDeadline($deadline);
 		$this->setDescript($descript);
-		$this->setStats("Pendente");
+		$this->setStats($stats);
 		$this->setPlace($place);
 	}
 
@@ -99,11 +99,11 @@ class Delivery
 		return (new Database('entregas'))->select($where, $order, $limit, $fields);
 	}
 
-	public function update(array $params = [])
+	public function update(int $id, $title, $deadline, $descri, $stats, $pla)
 	{
-		$this->id = (new Database('entregas'))->update("id =" . $this->id, $params = []);
+		$success = (new Database('entregas'))->update($id, $title, $deadline, $descri, $stats, $pla);
 
-		return true;
+		return $success;
 	}
 
 	public function delete($id)

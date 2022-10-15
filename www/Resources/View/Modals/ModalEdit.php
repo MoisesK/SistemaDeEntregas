@@ -25,12 +25,12 @@
                     <label>Local da Entrega</label><br>
                     <input class="form-control" name="place-delivery" type="text" value="{{place-delivery}}"><br>
                     <label>Prazo da Entrega</label><br>
-                    <input class="form-control" name="deadline-delivery" type="datetime" value="{{deadline-delivery}}"><br>
+                    <input class="form-control" name="deadline-delivery" type="datetime-local" value="{{deadline-delivery}}"><br>
                     <label>Status da Entrega</label><br>
                     <select class="custom-select" name="stats-delivery">
                         <option selected>{{stats-delivery}}</option>
-                        <option value="Conclude">Concluída</option>
-                        <option value="Cancel">Cancelada</option>
+                        <option value="Concluida">Concluída</option>
+                        <option value="Cancelada">Cancelada</option>
                     </select>
                     <!-- <input class="form-control" name="stats-delivery" type="text" value="{{stats-delivery}}"><br> -->
             </div>

@@ -73,13 +73,16 @@ class Home extends Page
 
 			case isset($postVars['editButton']):
 				$dl = new Delivery();
-				$dl->update($postVars["id-delivery"], [
-					'title' => Helper::itSanitizeVar($postVars['title-delivery']),
-					'deadline' => Helper::itSanitizeVar($postVars['deadline-delivery']),
-					'descript' => Helper::itSanitizeVar($postVars['description-delivery']),
-					'stats' => Helper::itSanitizeVar($postVars['stats-delivery']),
-					'place' => Helper::itSanitizeVar($postVars['place-delivery']),
-				]);
+
+				$dl->update(
+					$postVars['id-delivery'],
+					Helper::itSanitizeVar($postVars['title-delivery']),
+					Helper::itSanitizeVar($postVars['deadline-delivery']),
+					Helper::itSanitizeVar($postVars['description-delivery']),
+					Helper::itSanitizeVar($postVars['stats-delivery']),
+					Helper::itSanitizeVar($postVars['place-delivery'])
+				);
+
 				$_SESSION['Edit'] = "Item Editado com Sucesso!";
 				break;
 		}

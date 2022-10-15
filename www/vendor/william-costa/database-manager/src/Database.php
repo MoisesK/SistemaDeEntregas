@@ -152,20 +152,23 @@ class Database
 
   /**
    * Método responsável por executar atualizações no banco de dados
-   * @param  string $where
-   * @param  array $values [ field => value ]
    * @return boolean
    */
-  public function update($where, $values)
+  public function update($id, $title, $deadline, $descri, $stats, $place)
   {
-    //DADOS DA QUERY
-    $fields = array_keys($values);
+    $con = $this->connection;
 
-    //MONTA A QUERY
-    $query = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=? WHERE ' . $where;
+    $sql = "UPDATE entregas SET title = :tit, deadline = :dead, descript = :descri , stats = :stats, place = :pla WHERE id= $id";
+    $sql = $con->prepare($sql);
+
+    $sql->bindValue(':tit', $title);
+    $sql->bindValue(':dead', $deadline);
+    $sql->bindValue(':descri', $descri);
+    $sql->bindValue(':stats', $stats);
+    $sql->bindValue(':pla', $place);
 
     //EXECUTAR A QUERY
-    $this->execute($query, array_values($values));
+    $sql->execute();
 
     //RETORNA SUCESSO
     return true;
