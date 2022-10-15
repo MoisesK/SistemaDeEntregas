@@ -1,9 +1,9 @@
-<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal">
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal{{id}}">
     <i class=" bi bi-pencil-square"></i>
 </button>
 
 <!-- Modal Structure -->
-<div class="modal fade" id="editModal">
+<div class="modal fade" id="editModal{{id}}">
 
     <div class="modal-dialog">
 
@@ -15,18 +15,33 @@
             </div>
 
             <div class="modal-body">
-                <form method="POST" style="display: flex; justify-content: space-evenly;">
-                    <label>Titulo da Entrega</label>
-                    <input name="title-delivery" type="text" value="{[title-delivery}}">
+                <h6>Entrega Id: {{id}}</h6>
+                <form method="POST" name="editForm">
+                    <input type="hidden" name="id-delivery" value="{{id}}">
+                    <label>Titulo da Entrega</label><br>
+                    <input class="form-control" name="title-delivery" type="text" value="{{title-delivery}}"><br>
+                    <label>Descrição da Entrega</label><br>
+                    <input class="form-control" name="description-delivery" type="text" value="{{description-delivery}}"><br>
+                    <label>Local da Entrega</label><br>
+                    <input class="form-control" name="place-delivery" type="text" value="{{place-delivery}}"><br>
+                    <label>Prazo da Entrega</label><br>
+                    <input class="form-control" name="deadline-delivery" type="datetime" value="{{deadline-delivery}}"><br>
+                    <label>Status da Entrega</label><br>
+                    <select class="custom-select" name="stats-delivery">
+                        <option selected>{{stats-delivery}}</option>
+                        <option value="Conclude">Concluída</option>
+                        <option value="Cancel">Cancelada</option>
+                    </select>
+                    <!-- <input class="form-control" name="stats-delivery" type="text" value="{{stats-delivery}}"><br> -->
             </div>
 
             <div class="modal-footer">
                 <div class="modal-footer">
-                    <button class="btn btn-danger" type="submit" name="editButton" value="{{id}}">
+                    <button class="btn btn-primary" type="submit" name="editButton" value="{{id}}">
                         Editar
                     </button>
                     </form>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

@@ -1,9 +1,9 @@
-<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{id}}">
     <i class="bi bi-x-circle-fill"></i>
 </button>
 
 <!-- Modal Structure -->
-<div class="modal fade" id="deleteModal">
+<div class="modal fade" id="deleteModal{{id}}">
 
     <div class="modal-dialog">
 

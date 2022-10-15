@@ -39,12 +39,18 @@ class Home extends Page
 				"Place" => $obDelivery->getPlace(),
 				"Stats" => $obDelivery->getStats(),
 				"Actions" => View::render('Pages/Home/Actions', [
-					// "ButtonDelete" => View::render('Pages/Home/ActionButtons', ["Id" => $obDelivery->getId(),]),
 					"ButtonDelete" => View::render('Modals/ModalDelete', [
 						"id" => $obDelivery->getId(),
 						"title" => $obDelivery->getTitle()
 					]),
-					"ButtonEdit" => View::render('Modals/ModalEdit'),
+					"ButtonEdit" => View::render('Modals/ModalEdit', [
+						"id" => $obDelivery->getId(),
+						"deadline-delivery" => date('H:i d/m/yy', strtotime($obDelivery->getDeadline())),
+						"title-delivery" => $obDelivery->getTitle(),
+						"description-delivery" => $obDelivery->getDescript(),
+						"place-delivery" => $obDelivery->getPlace(),
+						"stats-delivery" => $obDelivery->getStats(),
+					]),
 				])
 			]);
 		}
@@ -66,6 +72,14 @@ class Home extends Page
 				break;
 
 			case isset($postVars['editButton']):
+				$dl = new Delivery();
+				$dl->update($postVars["id-delivery"], [
+					'title' => Helper::itSanitizeVar($postVars['title-delivery']),
+					'deadline' => Helper::itSanitizeVar($postVars['deadline-delivery']),
+					'descript' => Helper::itSanitizeVar($postVars['description-delivery']),
+					'stats' => Helper::itSanitizeVar($postVars['stats-delivery']),
+					'place' => Helper::itSanitizeVar($postVars['place-delivery']),
+				]);
 				$_SESSION['Edit'] = "Item Editado com Sucesso!";
 				break;
 		}

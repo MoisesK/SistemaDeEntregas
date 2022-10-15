@@ -6,6 +6,7 @@ namespace App\Controller\Pages;
 use App\Util\View;
 use App\Model\Delivery;
 use PHP_CodeSniffer\Filters\Filter;
+use App\Model\Helper;
 
 class RegisterDeliveries extends Page
 {
@@ -28,10 +29,10 @@ class RegisterDeliveries extends Page
     $postVars = $request->getPostVars();
 
     $params = [
-      "title" => filter_var($postVars['title-delivery'], FILTER_SANITIZE_SPECIAL_CHARS),
-      "deadline" => filter_var($postVars['deadline-delivery'], FILTER_SANITIZE_SPECIAL_CHARS),
-      "description" => filter_var($postVars['description-delivery'], FILTER_SANITIZE_SPECIAL_CHARS),
-      "place" => filter_var($postVars['place-delivery'], FILTER_SANITIZE_SPECIAL_CHARS)
+      "title" => Helper::itSanitizeVar($postVars['title-delivery']),
+      "deadline" => Helper::itSanitizeVar($postVars['deadline-delivery']),
+      "description" => Helper::itSanitizeVar($postVars['description-delivery']),
+      "place" => Helper::itSanitizeVar($postVars['place-delivery'])
     ];
 
     $ne = new Delivery();

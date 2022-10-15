@@ -1,4 +1,4 @@
-<h1>{{HomeName}} </h1>
+<h1 class="center">{{HomeName}} </h1>
 <hr>
 {{Alerts}}
 <section id="listaEntregas">

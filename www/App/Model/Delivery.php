@@ -80,10 +80,6 @@ class Delivery
 		$this->place = $place;
 	}
 
-	public static function read($where = null, $order = null, $limit = null, $fields = '*')
-	{
-		return (new Database('entregas'))->select($where, $order, $limit, $fields);
-	}
 
 	public function create()
 	{
@@ -94,6 +90,18 @@ class Delivery
 			'stats' => $this->stats,
 			'place' => $this->place
 		]);
+
+		return true;
+	}
+
+	public static function read($where = null, $order = null, $limit = null, $fields = '*')
+	{
+		return (new Database('entregas'))->select($where, $order, $limit, $fields);
+	}
+
+	public function update(array $params = [])
+	{
+		$this->id = (new Database('entregas'))->update("id =" . $this->id, $params = []);
 
 		return true;
 	}

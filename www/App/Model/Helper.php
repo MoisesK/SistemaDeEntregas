@@ -7,7 +7,7 @@ use App\Util\View;
 class Helper
 {
 
-    public static function getSMessage()
+    public static function getSMessage(): mixed
     {
         if (isset($_SESSION['Create'])) {
             $v = View::render('Alerts/AlertCreate');
@@ -28,5 +28,10 @@ class Helper
         }
 
         return $v;
+    }
+
+    public static function itSanitizeVar($var): string
+    {
+        return filter_var($var, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     }
 }
