@@ -11,7 +11,7 @@ class About extends Page
     //Metodo qu retornar o conteúdo(View) da PÁGINA SOBRE;
     $conteudo = View::render('Pages/about', [
       "PageName" => "Sobre o Projeto",
-      "Descrição" => "Seja bem vindo ao Entregas 2000,
+      "Description" => "Seja bem vindo ao Entregas 2000,
       o Sistema de entregas perfeito para seu negócio."
     ]);
 

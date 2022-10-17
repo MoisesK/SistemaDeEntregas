@@ -11,8 +11,8 @@ class View
     //Inicia Sessão e Carrega mensagens
     session_start();
 
-    if (isset($_SESSION["mensagem"])) {
-      echo $_SESSION["mensagem"];
+    if (isset($_SESSION["message"])) {
+      echo $_SESSION["message"];
       session_unset();
     }
   }

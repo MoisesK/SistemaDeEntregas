@@ -24,21 +24,21 @@ $ob->post('/',[
 
 
 // ROTA SOBRE
-$ob->get('/sobre',[
+$ob->get('/about',[
     function(){
         return new Response(200, Pages\About::getAbout());
     }
 ]);
 
 // ROTA CADASTRO DE ENTREGAS
-$ob->get('/novaentrega',[
+$ob->get('/newdelivery',[
     function(){
         return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries());
     }
 ]);
 
 // ROTA CADASTRO DE ENTREGAS (INSERT)
-$ob->post('/novaentrega',[
+$ob->post('/newdelivery',[
     function(){
         $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
