@@ -158,7 +158,7 @@ class Database
   {
     $con = $this->connection;
 
-    $sql = "UPDATE entregas SET title = :tit, deadline = :dead, descript = :descri , stats = :stats, place = :pla WHERE id= $id";
+    $sql = "UPDATE $this->table SET title = :tit, deadline = :dead, descript = :descri , stats = :stats, place = :pla WHERE id= $id";
     $sql = $con->prepare($sql);
 
     $sql->bindValue(':tit', $title);

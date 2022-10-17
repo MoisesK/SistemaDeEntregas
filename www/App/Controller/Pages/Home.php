@@ -3,11 +3,8 @@
 namespace App\Controller\Pages;
 
 use App\Model\Helper;
-use App\Http\Response;
 use App\Util\View;
 use App\Model\Delivery;
-use Exception;
-
 
 class Home extends Page
 {
@@ -45,7 +42,7 @@ class Home extends Page
 					]),
 					"ButtonEdit" => View::render('Modals/ModalEdit', [
 						"id" => $obDelivery->getId(),
-						"deadline-delivery" => date('H:i d/m/yy', strtotime($obDelivery->getDeadline())),
+						"deadline-delivery" => date($obDelivery->getDeadline()),
 						"title-delivery" => $obDelivery->getTitle(),
 						"description-delivery" => $obDelivery->getDescript(),
 						"place-delivery" => $obDelivery->getPlace(),
@@ -83,7 +80,7 @@ class Home extends Page
 					Helper::itSanitizeVar($postVars['place-delivery'])
 				);
 
-				$_SESSION['Edit'] = "Item Editado com Sucesso!";
+				$_SESSION['edit'] = "Item Editado com Sucesso!";
 				break;
 		}
 

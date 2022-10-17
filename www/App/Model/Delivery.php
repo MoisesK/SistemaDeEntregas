@@ -7,11 +7,11 @@ use \WilliamCosta\DatabaseManager\Database;
 class Delivery
 {
 	private int $id;
-	private string $title = '';
-	private string $deadline = '';
-	private string $descript = '';
-	private string $stats = '';
-	private string $place = '';
+	private string $title;
+	private string $deadline;
+	private string $descript;
+	private string $stats;
+	private string $place;
 
 
 	public function newDelivery(string $title, string $deadline, string $descript, string $place, string $stats = "Pendente")
@@ -83,7 +83,7 @@ class Delivery
 
 	public function create()
 	{
-		$this->id = (new Database('entregas'))->insert([
+		$this->id = (new Database('deliveries'))->insert([
 			'title' => $this->title,
 			'deadline' => $this->deadline,
 			'descript' => $this->descript,
@@ -96,19 +96,19 @@ class Delivery
 
 	public static function read($where = null, $order = null, $limit = null, $fields = '*')
 	{
-		return (new Database('entregas'))->select($where, $order, $limit, $fields);
+		return (new Database('deliveries'))->select($where, $order, $limit, $fields);
 	}
 
 	public function update(int $id, $title, $deadline, $descri, $stats, $pla)
 	{
-		$success = (new Database('entregas'))->update($id, $title, $deadline, $descri, $stats, $pla);
+		$success = (new Database('deliveries'))->update($id, $title, $deadline, $descri, $stats, $pla);
 
 		return $success;
 	}
 
 	public function delete($id)
 	{
-		$item = (new Database('entregas'))->delete("id=" . $id);
+		$item = (new Database('deliveries'))->delete("id=" . $id);
 
 		return $item;
 	}
