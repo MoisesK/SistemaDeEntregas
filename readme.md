@@ -22,8 +22,6 @@ Abra a pasta SistemaDeEntregas em seu terminal e digite o comando:
 3. Realize a importação para dendo deste banco de dados, o sql que está na pasta "BancoDeDados" do projeto.<br>
 4. Acesse localhost:8000 e usufrúa do projeto.<br>
 
-OBS: Na pasta WWW encontra-se todo o projeto, portanto não delete-a.
-
 
 
 
