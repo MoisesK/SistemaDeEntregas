@@ -13,7 +13,8 @@ class RegisterDeliveries extends Page
   public static function getRegisterDeliveries(): string
   { //Metodo que retornar o conteúdo(View) da PÁGINA Cadastro;
     $content = View::render('Pages/RegisterDeliveries', [
-      "HomeName" => "Registro de Entregas",
+      "PageName" => "Registro de Entregas",
+      "DescricaoPage" => "Área de cadastro de novas entregas!",
       "Alerts" => Helper::getSMessage(),
       "FormDeliveries" => View::render('Pages/RegisterDeliveries/Form'),
     ]);

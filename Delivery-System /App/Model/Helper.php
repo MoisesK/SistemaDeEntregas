@@ -6,13 +6,15 @@ use App\Util\View;
 
 class Helper
 {
+    public function refresh(int $time){
+        header("Refresh: $time;");
+    }
     public static function getSMessage(): mixed
     {
 
-
         if (isset($_SESSION['create'])) {
             $messageSession = View::render('Alerts/AlertCreate');
-            header("Refresh: 5;");
+            self::refresh(3);
             session_unset();
         }
 

@@ -13,6 +13,7 @@ class Home extends Page
 		//Metodo que retornar o conteúdo(View) da PÁGINA HOME
 		$content = View::render('Pages/Home', [
 			"HomeName" => "Lista de Entregas",
+			"DescricaoPage" => "Visão geral de Entregas cadastradas!",
 			"Alerts" => Helper::getSMessage(),
 			"Items" => self::getDeliveryItems(),
 		]);
