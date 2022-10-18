@@ -6,9 +6,9 @@ class Request
 {
   private string $httpMethod;
   private string $uri;
-  private array $queryParams = [];
-  private array $postVars = [];
-  private array $headers = [];
+  private array $queryParams;
+  private array $postVars;
+  private array $headers;
 
   public function __construct()
   {
@@ -30,7 +30,6 @@ class Request
     $this->uri = $xURI[0];
   }
 
-  //Metódos para obter os retornos.
   public function getHttpMethod(): string
   {
     return $this->httpMethod;

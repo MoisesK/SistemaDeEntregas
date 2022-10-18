@@ -5,18 +5,16 @@ namespace App\Controller\Pages;
 
 use App\Util\View;
 use App\Model\Delivery;
-use PHP_CodeSniffer\Filters\Filter;
 use App\Model\Helper;
 
 class RegisterDeliveries extends Page
 {
 
   public static function getRegisterDeliveries(): string
-  {
-    //Metodo que retornar o conteúdo(View) da PÁGINA Cadastro;
-
+  { //Metodo que retornar o conteúdo(View) da PÁGINA Cadastro;
     $content = View::render('Pages/RegisterDeliveries', [
       "HomeName" => "Registro de Entregas",
+      "Alerts" => Helper::getSMessage(),
       "FormDeliveries" => View::render('Pages/RegisterDeliveries/Form'),
     ]);
 
@@ -24,7 +22,7 @@ class RegisterDeliveries extends Page
   }
 
 
-  public static function insertDelivery($request): string
+  public static function insertDelivery($request): mixed
   {
     $postVars = $request->getPostVars();
 
@@ -35,22 +33,19 @@ class RegisterDeliveries extends Page
       "place" => Helper::itSanitizeVar($postVars['place-delivery'])
     ];
 
-    $ne = new Delivery();
-    $ne->newDelivery(
+    $newDelivery = new Delivery();
+
+    $newDelivery->newDelivery(
       $params['title'],
       $params['deadline'],
       $params['description'],
       $params['place']
     );
 
-    $ne->create();
+    $newDelivery->create();
 
-    session_start();
-    $_SESSION["create"] = "Entrega Cadastrada com Sucesso!";
+    $_SESSION['create'] = "Entregas Cadastrada com Sucesso!";
 
-    header("Refresh: 0; url=/");
-
-    // Retornar os dados
     return self::getRegisterDeliveries();
   }
 }

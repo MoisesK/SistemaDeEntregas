@@ -6,17 +6,6 @@ class View
 {
   private static array $vars = [];
 
-  public static function sSession()
-  {
-    //Inicia Sessão e Carrega mensagens
-    session_start();
-
-    if (isset($_SESSION["message"])) {
-      echo $_SESSION["message"];
-      session_unset();
-    }
-  }
-
   public static function init($vars = [])
   {   // Método responsável por definir os dados iniciais da classe
     self::$vars = $vars;

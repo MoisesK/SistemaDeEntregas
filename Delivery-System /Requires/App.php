@@ -2,12 +2,15 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use App\Model\Helper;
 use App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
 
 //Inicia e carrega SESSÃO de mensagens
-View::sSession();
+session_start();
+
+Helper::getSMessage();
 
 // Carrega Variaveis de ambiente
 Environment::load(__DIR__ . '/../');

@@ -1,26 +1,29 @@
-<h1 class="center">{{HomeName}} </h1>
+<h1 class="text-center text-uppercase"><i class="bi bi-clipboard2"></i> {{HomeName}} </h1>
 <hr>
-{{Alerts}}
+
+<div class="text-sm">
+    {{Alerts}}
+</div>
+
 <section id="listaEntregas">
-    <div class="card text-dark mb-3">
-        <h5 class="card-header text-center">Entregas</h5>
+    <div class="card text-dark mb-3 shadow-lg bg-body rounded">
+        <h5 class="card-header text-center">Entregas Cadastradas</h5>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table ">
-                    <thead>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-info">
                         <tr>
-                            <th scope="col">Prazo Da entrega</th>
-                            <th scope="col">Titulo da Entrega</th>
-                            <th scope="col">Descrição da Entrega</th>
-                            <th scope="col">Local da Entrega</th>
-                            <th scope="col">Status da Entrega</th>
-                            <th scope="col-2">Ações</th>
+                            <th class="text-center" scope="col">Prazo Da entrega</th>
+                            <th class="text-center" scope="col">Titulo da Entrega</th>
+                            <th class="text-center" scope="col">Descrição da Entrega</th>
+                            <th class="text-center" scope="col">Local da Entrega</th>
+                            <th class="text-center" scope="col">Status da Entrega</th>
+                            <th class="text-center" scope="col-2">Ações</th>
                         </tr>
                     </thead>
                     {{Items}}
                 </table>
             </div>
-
         </div>
     </div>
 

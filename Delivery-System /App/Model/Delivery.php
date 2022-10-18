@@ -39,7 +39,7 @@ class Delivery
 		$this->title = $title;
 	}
 
-	public function getDeadline()
+	public function getDeadline(): string
 	{
 		return $this->deadline;
 	}
@@ -81,7 +81,7 @@ class Delivery
 	}
 
 
-	public function create()
+	public function create(): bool
 	{
 		$this->id = (new Database('deliveries'))->insert([
 			'title' => $this->title,
@@ -94,19 +94,19 @@ class Delivery
 		return true;
 	}
 
-	public static function read($where = null, $order = null, $limit = null, $fields = '*')
+	public static function read($where = null, $order = null, $limit = null, $fields = '*'): mixed
 	{
 		return (new Database('deliveries'))->select($where, $order, $limit, $fields);
 	}
 
-	public function update(int $id, $title, $deadline, $descri, $stats, $pla)
+	public function update(int $id, $title, $deadline, $descri, $stats, $pla): bool
 	{
 		$success = (new Database('deliveries'))->update($id, $title, $deadline, $descri, $stats, $pla);
 
 		return $success;
 	}
 
-	public function delete($id)
+	public function delete($id): bool
 	{
 		$item = (new Database('deliveries'))->delete("id=" . $id);
 

@@ -22,6 +22,7 @@ class Home extends Page
 
 	public static function getDeliveryItems()
 	{
+		session_start();
 		$items = '';
 
 		$results = Delivery::read(null, 'id DESC');
@@ -30,7 +31,7 @@ class Home extends Page
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
 
 			$items .= View::render('Pages/Home/Items', [
-				"Deadline" => date('H:i d/m/yy', strtotime($obDelivery->getDeadline())),
+				"Deadline" => date("d/m/yy" . " á\s " . "H:i", strtotime($obDelivery->getDeadline())),
 				"Title" => $obDelivery->getTitle(),
 				"Description" => $obDelivery->getDescript(),
 				"Place" => $obDelivery->getPlace(),
@@ -59,18 +60,15 @@ class Home extends Page
 	{
 		$postVars = $request->getPostVars();
 
-		session_start();
-
 		switch ($postVars) {
 			case isset($postVars['deleteButton']):
 				$dl = new Delivery();
 				$dl->delete($postVars['deleteButton']);
-				$_SESSION['Delete'] = "Item Excluído com Sucesso!";
+				$_SESSION['delete'] = "Item Excluído com Sucesso!";
 				break;
 
 			case isset($postVars['editButton']):
 				$dl = new Delivery();
-
 				$dl->update(
 					$postVars['id-delivery'],
 					Helper::itSanitizeVar($postVars['title-delivery']),

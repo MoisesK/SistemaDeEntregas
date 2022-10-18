@@ -3,13 +3,3 @@
         <i class="bi bi-x-circle-fill"></i>
     </button>
 </form>
-
-
-
-
-
-
-
-<!-- <button class="btn btn-link" type="submit" name="editButton" value="{{Id}}">
-        <i class=" bi bi-pencil-square"></i>
-    </button> -->

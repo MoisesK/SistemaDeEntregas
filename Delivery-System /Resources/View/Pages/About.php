@@ -1,3 +1,3 @@
-<h1>{{PageName}} </h1>
+<h1 class="text-center">{{PageName}} </h1>
 <hr>
-<p>{{Description}}</p>
+<p>{{Descript}}</p>

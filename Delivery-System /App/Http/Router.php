@@ -7,9 +7,9 @@ use \Exception;
 
 class Router
 {
-    private string $url = '';
-    private $prefix;
-    private array $routes = [];
+    private string $url;
+    private mixed $prefix;
+    private array $routes;
     private Request $request;
 
     public function __construct(string $url)
@@ -19,7 +19,7 @@ class Router
         $this->setPrefix();
     }
 
-    private function getPrefix()
+    private function getPrefix(): string
     {
         return $this->prefix;
     }
@@ -44,7 +44,6 @@ class Router
 
         // Padrão de validação da URL
         $patternRoute = '/^' . str_replace('/', '\/', $route) . '$/';
-
         $this->routes[$patternRoute][$method] = $params;
     }
 
@@ -59,7 +58,7 @@ class Router
     }
 
 
-    private function getRoute()
+    private function getRoute(): array
     {    // Retorna array com dados da rota atual e valida a rota
 
         $uri = $this->request->getUri();
@@ -90,18 +89,14 @@ class Router
 
 
     public function run()
-    {    // Método responsável por executar a rota
-
+    {
         try { // Validação de rotas
-
             $route = $this->getRoute();
 
-            // Verifica o controlador
             if (!isset($route['controller'])) : throw new Exception("URL não pôde ser processada", 500);
             endif;
 
             $args = [];
-
             // Retorna a execução da função
             return call_user_func_array($route['controller'], $args);
         } catch (Exception $e) {
