@@ -30,6 +30,11 @@ class Request
     $this->uri = $xURI[0];
   }
 
+  public function getRouter(): Router
+  {
+    return $this->router;
+  }
+
   public function getHttpMethod(): string
   {
     return $this->httpMethod;

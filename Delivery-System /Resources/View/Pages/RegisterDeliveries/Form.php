@@ -1,4 +1,4 @@
-<section id="form">
+<section id="form" action="?page=1">
     <form method="POST">
         <div class="text-center form-group mt-3 mb-4">
             <label class="text-uppercase fs-4 fst-italic pb-2">Titulo da Entrega</label>
@@ -21,9 +21,9 @@
         </div>
 
         <div class="text-center form-group mt-5">
-            <button class="btn btn-success" type="submit"><i class="bi bi-clipboard-plus"></i>  CADASTRAR ENTREGA</button>
+            <button class="btn btn-success" type="submit"><i class="bi bi-clipboard-plus"></i> CADASTRAR ENTREGA</button>
             <a class="btn btn-primary" href="/">RETORNAR PARA HOME<i class="bi bi-arrow-return-left"></i></a>
         </div>
-       
+
     </form>
 </section>

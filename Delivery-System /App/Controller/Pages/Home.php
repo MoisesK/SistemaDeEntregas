@@ -5,6 +5,8 @@ namespace App\Controller\Pages;
 use App\Model\Helper;
 use App\Util\View;
 use App\Model\Delivery;
+use \App\Util\Pagination;
+use \App\Http\Request;
 
 class Home extends Page
 {
@@ -26,7 +28,7 @@ class Home extends Page
 		session_start();
 		$items = '';
 
-		$results = Delivery::read(null, 'id DESC');
+		$results = Delivery::read(null, 'id DESC', Pagination::getPagination());
 
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
@@ -57,7 +59,7 @@ class Home extends Page
 		return $items;
 	}
 
-	public static function acoesDelivery($request)
+	public static function actionsDelivery($request)
 	{
 		$postVars = $request->getPostVars();
 

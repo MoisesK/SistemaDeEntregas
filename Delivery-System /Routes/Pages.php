@@ -6,41 +6,43 @@ use App\Http\Request;
 use App\Http\Response;
 use App\Controller\Pages;
 
+
+
 // ROTA HOME
-$ob->get('/',[
-    function(){
+$obRouter->get('/', [
+    function () {
         return new Response(200, Pages\Home::getHome());
     }
 ]);
 
 // ROTA DELETAR/EDITAR ENTREGAS
-$ob->post('/',[
-    function(){
+$obRouter->post('/', [
+    function () {
         $request = new Request();
-        return new Response(200, Pages\Home::acoesDelivery($request));
+        return new Response(200, Pages\Home::actionsDelivery($request));
     }
 ]);
 
 
 
 // ROTA SOBRE
-$ob->get('/about',[
-    function(){
+$obRouter->get('/about', [
+    function () {
         return new Response(200, Pages\About::getAbout());
     }
 ]);
 
 // ROTA CADASTRO DE ENTREGAS
-$ob->get('/newdelivery',[
-    function(){
-        return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries());
+$obRouter->get('/newdelivery', [
+    function () {
+        $request = new Request();
+        return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries($request));
     }
 ]);
 
 // ROTA CADASTRO DE ENTREGAS (INSERT)
-$ob->post('/newdelivery',[
-    function(){
-        $request = new Request();
+$obRouter->post('/newdelivery', [
+    function ($request) {
         return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
     }
 ]);

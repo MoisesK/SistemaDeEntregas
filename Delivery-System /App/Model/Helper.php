@@ -6,9 +6,12 @@ use App\Util\View;
 
 class Helper
 {
-    public function refresh(int $time){
+    // PROTÓTIPO DE FUNÇÃO PARA DÁ REFRESH
+    public function refresh(int $time)
+    {
         header("Refresh: $time;");
     }
+
     public static function getSMessage(): mixed
     {
 
