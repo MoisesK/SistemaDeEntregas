@@ -2,6 +2,9 @@
 
 namespace App\Controller\Pages;
 
+use App\Http\Request;
+use App\Http\Router;
+use App\Util\Pagination;
 use App\Util\View;
 
 class Page
@@ -17,6 +20,19 @@ class Page
     ]);
   }
 
+  public static function getPagination()
+  {
+    $pages = Pagination::getPagination()->getPages();
+
+    if (count($pages) <= 1) {
+      return '';
+    }
+
+    $links = '';
+
+    $request = new Request();
+    // $url = $request->getRouter();
+  }
 
   private static function getHeader(): string
   {

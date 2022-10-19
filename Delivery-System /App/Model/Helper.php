@@ -7,9 +7,9 @@ use App\Util\View;
 class Helper
 {
     // PROTÓTIPO DE FUNÇÃO PARA DÁ REFRESH
-    public function refresh(int $time)
+    public static function refresh($time)
     {
-        header("Refresh: $time;");
+        header("Refresh: $time.;");
     }
 
     public static function getSMessage(): mixed
@@ -23,13 +23,13 @@ class Helper
 
         if (isset($_SESSION['delete'])) {
             $messageSession = View::render('Alerts/AlertDelete');
-            header("Refresh: 3; url=/");
+            self::refresh(3);
             session_unset();
         }
 
         if (isset($_SESSION['edit'])) {
             $messageSession = View::render('Alerts/AlertEdit');
-            header("Refresh: 3; url=/");
+            self::refresh(3);
             session_unset();
         }
 

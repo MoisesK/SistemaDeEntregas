@@ -7,7 +7,6 @@ use App\Http\Response;
 use App\Controller\Pages;
 
 
-
 // ROTA HOME
 $obRouter->get('/', [
     function () {
@@ -42,7 +41,8 @@ $obRouter->get('/newdelivery', [
 
 // ROTA CADASTRO DE ENTREGAS (INSERT)
 $obRouter->post('/newdelivery', [
-    function ($request) {
+    function () {
+        $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
     }
 ]);

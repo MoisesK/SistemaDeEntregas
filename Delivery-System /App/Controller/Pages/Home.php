@@ -18,6 +18,7 @@ class Home extends Page
 			"DescricaoPage" => "Visão geral de Entregas cadastradas!",
 			"Alerts" => Helper::getSMessage(),
 			"Items" => self::getDeliveryItems(),
+			"Pagination" => parent::getPagination(),
 		]);
 
 		return parent::getPage("Home > E2000", $content);
@@ -28,7 +29,7 @@ class Home extends Page
 		session_start();
 		$items = '';
 
-		$results = Delivery::read(null, 'id DESC', Pagination::getPagination());
+		$results = Delivery::read(null, 'id DESC', Pagination::getPagination()->getLimit());
 
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {

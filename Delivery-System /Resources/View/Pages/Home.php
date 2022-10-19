@@ -27,5 +27,5 @@
             </div>
         </div>
     </div>
-
+    {{Pagination}}
 </section>

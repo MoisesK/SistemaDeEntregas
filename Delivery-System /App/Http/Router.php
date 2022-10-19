@@ -19,6 +19,7 @@ class Router
         $this->setPrefix();
     }
 
+
     private function getPrefix(): string
     {
         return $this->prefix;
@@ -29,6 +30,11 @@ class Router
         $parseUrl = parse_url($this->url);
 
         $this->prefix = $parseUrl['path'] ?? '';
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
     }
 
     private function addRoute(string $method, string $route, array $params = []): void
@@ -102,5 +108,10 @@ class Router
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
+    }
+
+    public function getCurrentUrl()
+    {
+        return $this->getUrl() . $this->Request->getUri();
     }
 }

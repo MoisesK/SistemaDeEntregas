@@ -9,6 +9,7 @@ class Request
   private array $queryParams;
   private array $postVars;
   private array $headers;
+  private Router $router;
 
   public function __construct()
   {
