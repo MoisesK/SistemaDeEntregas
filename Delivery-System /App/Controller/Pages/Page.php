@@ -31,7 +31,23 @@ class Page
     $links = '';
 
     $request = new Request();
-    // $url = $request->getRouter();
+
+    $queryParams = $request->getQueryParams();
+
+    foreach ($pages as $page) {
+      $queryParams['page'] = $page['page'];
+      $link = "?" . http_build_query($queryParams);
+
+      $links .= View::render('Pages/Pagination/Link', [
+        "page" => $page['page'],
+        "link" => $link,
+        'active' => $page['current'] ? 'active' : ''
+      ]);
+    }
+
+    return View::render('Pages/Pagination/Box', [
+      "links" => $links
+    ]);
   }
 
   private static function getHeader(): string
