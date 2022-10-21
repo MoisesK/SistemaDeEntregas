@@ -36,8 +36,8 @@ class Helper
         return $messageSession;
     }
 
-    public static function itSanitizeVar($varSanitizer): string
+    public static function itSanitizeVar($varForSanitizer): string
     {
-        return filter_var($varSanitizer, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        return filter_var($varForSanitizer, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     }
 }

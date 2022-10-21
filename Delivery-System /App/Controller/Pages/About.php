@@ -11,8 +11,8 @@ class About extends Page
     //Metodo qu retornar o conteúdo(View) da PÁGINA SOBRE;
     $content = View::render('Pages/About', [
       "PageName" => "Sobre o Projeto",
-      "Descript" => "<h2>Entregas 2000</h2> <br>
-      Trata-se de um sistema de entregas onde será possível, realizar o gerenciamento de suas entregas, possibilitando agilidade e fluidez no seu dia à dia.<br>Arquitetura utilizada: MVC<br>Biblioteca : Bootstrap",
+      "Descript" => "O Entregas 2000<br>
+      Trata-se de um sistema de entregas onde será possível, realizar o gerenciamento de suas entregas, possibilitando agilidade e fluidez no seu dia à dia.<br><br>Arquitetura utilizada: MVC<br>Biblioteca : Bootstrap",
     ]);
 
     return parent::getPage("Sobre > E2000", $content);
