@@ -6,7 +6,10 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./Delivery-System /public:/app
+      - ./Delivery-System /public:/public
+    environment:
+      WEB_DOCUMENT_ROOT: /public
+      # WEB_DOCUMENT_INDEX: index.php
 
   
   db:

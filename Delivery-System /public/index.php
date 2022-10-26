@@ -1,9 +1,8 @@
 <?php
-echo __DIR__;
+echo  'public' . __DIR__ . '/../vendor/autoload.php';
 exit;
 
-require '/../vendor/autoload.php';
-echo __DIR__;
+require 'public' . __DIR__ . '/../vendor/autoload.php';
 exit;
 
 use App\Routes\Router;
