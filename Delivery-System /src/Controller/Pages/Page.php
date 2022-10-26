@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller\Pages;
+namespace Controller\Pages;
 
-use App\Http\Request;
-use App\Http\Router;
+use App\Routes\Request;
+use App\Routes\Router;
 use App\Util\Pagination;
 use App\Util\View;
 

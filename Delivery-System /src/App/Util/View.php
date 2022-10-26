@@ -13,7 +13,7 @@ class View
 
   private static function getContentView($view): string
   {
-    $archive = __DIR__ . '/../../Resources/View/' . $view . '.php';
+    $archive = __DIR__ . '/../../View/' . $view . '.php';
 
     //Verifica se o arquivo existe e retorna ele.
     return file_exists($archive) ? file_get_contents($archive) : '';

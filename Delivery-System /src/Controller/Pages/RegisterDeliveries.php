@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller\Pages;
+namespace Controller\Pages;
 
 
 use App\Util\View;
-use App\Model\Delivery;
-use App\Model\Helper;
+use Model\Delivery;
+use Model\Helper;
 
 class RegisterDeliveries extends Page
 {

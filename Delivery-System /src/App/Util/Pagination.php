@@ -2,8 +2,8 @@
 
 namespace App\Util;
 
-use \App\Model\Delivery;
-use \App\Http\Request;
+use \Model\Delivery;
+use \App\Routes\Request;
 use \WilliamCosta\DatabaseManager\Pagination as Pages;
 
 class Pagination

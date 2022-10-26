@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./Delivery-System :/app
+      - ./Delivery-System /public:/app
 
   
   db:

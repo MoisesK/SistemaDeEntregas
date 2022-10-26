@@ -2,9 +2,9 @@
 
 // Gerenciador de páginas
 
-use App\Http\Request;
-use App\Http\Response;
-use App\Controller\Pages;
+use App\Routes\Request;
+use App\Routes\Response;
+use Controller\Pages;
 
 
 // ROTA HOME

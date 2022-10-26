@@ -1,8 +1,13 @@
 <?php
+echo __DIR__;
+exit;
 
-require __DIR__ . '/../vendor/autoload.php';
+require '/../vendor/autoload.php';
+echo __DIR__;
+exit;
 
-use App\Model\Helper;
+use App\Routes\Router;
+use Model\Helper;
 use App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
@@ -25,3 +30,12 @@ define('URL', getenv('URL'));
 View::init([
     'URL' => URL
 ]);
+
+// Inicia o roteador
+$obRouter = new Router(URL);
+
+// Inclui as Rotas de Páginas
+include __DIR__ . '/../Routes/Pages.php';
+
+// Imprime as Páginas
+$obRouter->run()->sendResponse();
