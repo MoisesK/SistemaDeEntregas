@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller\Pages;
+namespace src\Controllers\Pages;
 
-use App\Model\Helper;
-use App\Util\View;
-use App\Model\Delivery;
-use \App\Util\Pagination;
-use \App\Http\Request;
+use src\Model\Helper;
+use src\App\Util\View;
+use src\Model\Delivery;
+use src\App\Util\Pagination;
+use src\App\Routes\Request;
 
 class Home extends Page
 {
@@ -26,7 +26,6 @@ class Home extends Page
 
 	public static function getDeliveryItems()
 	{
-		session_start();
 		$items = '';
 
 		$results = Delivery::read(null, 'id DESC', Pagination::getPagination()->getLimit());
@@ -72,7 +71,10 @@ class Home extends Page
 				break;
 
 			case isset($postVars['editButton']):
+
+
 				$dl = new Delivery();
+
 				$dl->update(
 					$postVars['id-delivery'],
 					Helper::itSanitizeVar($postVars['title-delivery']),
@@ -81,6 +83,8 @@ class Home extends Page
 					Helper::itSanitizeVar($postVars['stats-delivery']),
 					Helper::itSanitizeVar($postVars['place-delivery'])
 				);
+
+
 
 				$_SESSION['edit'] = "Item Editado com Sucesso!";
 				break;

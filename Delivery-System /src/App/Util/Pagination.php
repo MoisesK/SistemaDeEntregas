@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Util;
+namespace src\App\Util;
 
-use \App\Model\Delivery;
-use \App\Http\Request;
-use \WilliamCosta\DatabaseManager\Pagination as Pages;
+use src\Model\Delivery;
+use src\App\Routes\Request;
+use WilliamCosta\DatabaseManager\Pagination as Pages;
 
 class Pagination
 {

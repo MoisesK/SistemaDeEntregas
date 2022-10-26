@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace src\Model;
 
 use \WilliamCosta\DatabaseManager\Database;
 
@@ -101,7 +101,13 @@ class Delivery
 
 	public function update(int $id, $title, $deadline, $descri, $stats, $pla): bool
 	{
-		$success = (new Database('deliveries'))->update($id, $title, $deadline, $descri, $stats, $pla);
+		$success = (new Database('deliveries'))->update($id, [
+			"title" => $title,
+			"deadline" => $deadline,
+			"descript" => $descri,
+			"stats" => $stats,
+			"place" => $pla
+		]);
 
 		return $success;
 	}

@@ -2,10 +2,12 @@
 
 // Gerenciador de páginas
 
-use App\Http\Request;
-use App\Http\Response;
-use App\Controller\Pages;
+use src\App\Routes\Request;
+use src\App\Routes\Response;
+use src\App\Routes\Router;
+use src\Controllers\Pages;
 
+$request = new Request();
 
 // ROTA HOME
 $obRouter->get('/', [
@@ -29,7 +31,10 @@ $obRouter->get('/about', [
     function () {
         return new Response(200, Pages\About::getAbout());
     }
+
 ]);
+
+
 
 // ROTA CADASTRO DE ENTREGAS
 $obRouter->get('/newdelivery', [

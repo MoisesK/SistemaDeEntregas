@@ -4,21 +4,25 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707
+class ComposerStaticInitd75832482c505a17f4ac37fd985c6e58
 {
     public static $prefixLengthsPsr4 = array (
+        's' => 
+        array (
+            'src\\' => 4,
+        ),
         'W' => 
         array (
             'WilliamCosta\\DotEnv\\' => 20,
             'WilliamCosta\\DatabaseManager\\' => 29,
         ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'src\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'WilliamCosta\\DotEnv\\' => 
         array (
             0 => __DIR__ . '/..' . '/william-costa/dot-env/src',
@@ -27,14 +31,9 @@ class ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707
         array (
             0 => __DIR__ . '/..' . '/william-costa/database-manager/src',
         ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App',
-        ),
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Generic_Sniffs_Classes_DuplicateClassNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php',
         'Generic_Sniffs_CodeAnalysis_EmptyStatementSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/EmptyStatementSniff.php',
         'Generic_Sniffs_CodeAnalysis_ForLoopShouldBeWhileLoopSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/ForLoopShouldBeWhileLoopSniff.php',
@@ -283,9 +282,9 @@ class ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9c6b4255a9ab79a5e329c1553813f707::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$classMap;
 
         }, null, ClassLoader::class);
     }

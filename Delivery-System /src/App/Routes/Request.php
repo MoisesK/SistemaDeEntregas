@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace src\App\Routes;
 
 class Request
 {

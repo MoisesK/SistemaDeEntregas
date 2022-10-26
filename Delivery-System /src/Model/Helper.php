@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace src\Model;
 
-use App\Util\View;
+use src\App\Util\View;
 
 class Helper
 {
