@@ -30,6 +30,7 @@ View::init([
 // Inicia o roteador
 $obRouter = new Router(URL);
 
+
 // Inclui as Rotas de Páginas
 include '../src/App/Routes/Pages.php';
 

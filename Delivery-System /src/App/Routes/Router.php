@@ -99,6 +99,7 @@ class Router
         try { // Validação de rotas
             $route = $this->getRoute();
 
+
             if (!isset($route['Controllers'])) : throw new Exception("URL não pôde ser processada", 500);
             endif;
 
@@ -108,6 +109,11 @@ class Router
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
+
+        echo "<pre>";
+        print_r($this->getRoute());
+        echo "</pre>";
+        exit;
     }
 
     public function getCurrentUrl()

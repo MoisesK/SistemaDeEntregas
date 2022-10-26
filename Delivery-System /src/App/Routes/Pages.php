@@ -4,8 +4,10 @@
 
 use src\App\Routes\Request;
 use src\App\Routes\Response;
+use src\App\Routes\Router;
 use src\Controllers\Pages;
 
+$request = new Request();
 
 // ROTA HOME
 $obRouter->get('/', [
@@ -16,7 +18,7 @@ $obRouter->get('/', [
 
 // ROTA DELETAR/EDITAR ENTREGAS
 $obRouter->post('/', [
-    function () {
+    function ($request) {
         $request = new Request();
         return new Response(200, Pages\Home::actionsDelivery($request));
     }
@@ -29,11 +31,14 @@ $obRouter->get('/about', [
     function () {
         return new Response(200, Pages\About::getAbout());
     }
+
 ]);
+
+
 
 // ROTA CADASTRO DE ENTREGAS
 $obRouter->get('/newdelivery', [
-    function () {
+    function ($request) {
         $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries($request));
     }
@@ -41,7 +46,7 @@ $obRouter->get('/newdelivery', [
 
 // ROTA CADASTRO DE ENTREGAS (INSERT)
 $obRouter->post('/newdelivery', [
-    function () {
+    function ($request) {
         $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
     }
