@@ -26,7 +26,6 @@ class Home extends Page
 
 	public static function getDeliveryItems()
 	{
-		session_start();
 		$items = '';
 
 		$results = Delivery::read(null, 'id DESC', Pagination::getPagination()->getLimit());
