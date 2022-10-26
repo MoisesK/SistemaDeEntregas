@@ -13,8 +13,9 @@ Requisitos:
 Passo a Passo para Rodar:<br>
 Após clonar o repositório, abra a pasta SistemaDeEntregas em seu terminal e digite o comando:
 
-1. docker-compose up -d<br>
-2. Acesse localhost:8008 e usufrúa do projeto.<br>
+1.Crie um arquivo na pasta raiz do projeto (Delivery-System), como .env, coloque dentro dele TUDO que está no .env.example.<br>
+2. docker-compose up -d<br>
+3. Acesse localhost:8008 e usufrúa do projeto.<br>
 
 
 
