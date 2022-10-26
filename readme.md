@@ -8,13 +8,13 @@ Biblioteca : Bootstrap
 Requisitos:
 
 1. Docker-compose<br>
-2. Porta 8001 liberada.
+2. Porta 8008 liberada.
 
 Passo a Passo para Rodar:<br>
 Após clonar o repositório, abra a pasta SistemaDeEntregas em seu terminal e digite o comando:
 
 1. docker-compose up -d<br>
-2. Acesse localhost:8001 e usufrúa do projeto.<br>
+2. Acesse localhost:8008 e usufrúa do projeto.<br>
 
 
 
