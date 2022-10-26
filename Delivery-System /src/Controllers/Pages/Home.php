@@ -71,7 +71,10 @@ class Home extends Page
 				break;
 
 			case isset($postVars['editButton']):
+
+
 				$dl = new Delivery();
+
 				$dl->update(
 					$postVars['id-delivery'],
 					Helper::itSanitizeVar($postVars['title-delivery']),
@@ -80,6 +83,8 @@ class Home extends Page
 					Helper::itSanitizeVar($postVars['stats-delivery']),
 					Helper::itSanitizeVar($postVars['place-delivery'])
 				);
+
+
 
 				$_SESSION['edit'] = "Item Editado com Sucesso!";
 				break;

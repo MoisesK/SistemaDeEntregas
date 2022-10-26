@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use src\App\Routes\Router;
 use src\Model\Helper;

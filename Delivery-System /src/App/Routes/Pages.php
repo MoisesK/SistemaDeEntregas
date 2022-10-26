@@ -18,7 +18,7 @@ $obRouter->get('/', [
 
 // ROTA DELETAR/EDITAR ENTREGAS
 $obRouter->post('/', [
-    function ($request) {
+    function () {
         $request = new Request();
         return new Response(200, Pages\Home::actionsDelivery($request));
     }
@@ -38,7 +38,7 @@ $obRouter->get('/about', [
 
 // ROTA CADASTRO DE ENTREGAS
 $obRouter->get('/newdelivery', [
-    function ($request) {
+    function () {
         $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::getRegisterDeliveries($request));
     }
@@ -46,7 +46,7 @@ $obRouter->get('/newdelivery', [
 
 // ROTA CADASTRO DE ENTREGAS (INSERT)
 $obRouter->post('/newdelivery', [
-    function ($request) {
+    function () {
         $request = new Request();
         return new Response(200, Pages\RegisterDeliveries::insertDelivery($request));
     }
