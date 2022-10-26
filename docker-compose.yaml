@@ -1,0 +1,39 @@
+version: "3.1"
+
+services:
+  web:
+    image: webdevops/php-apache:8.0
+    ports:
+      - "8008:80"
+    volumes:
+      - ./Delivery-System :/Delivery-System
+    environment:
+      WEB_DOCUMENT_ROOT: /Delivery-System
+      WEB_DOCUMENT_INDEX: public/index.php
+
+  
+  db:
+    image: mysql
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+    - ./BancodeDados/delivery_system.sql:/docker-entrypoint-initdb.d/setup.sql
+    - db_data:/var/lib/mysqld
+    ports:
+    - 8081:3306
+    environment:
+      MYSQL_USER: admin
+      MYSQL_DATABASE: delivery_system
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      
+    ports:
+      - "8080:80"
+    volumes:
+      - ./uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
