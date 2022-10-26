@@ -1,12 +1,12 @@
 <?php
 
-namespace Controller\Pages;
+namespace src\Controllers\Pages;
 
-use Model\Helper;
-use App\Util\View;
-use Model\Delivery;
-use \App\Util\Pagination;
-use \App\Routes\Request;
+use src\Model\Helper;
+use src\App\Util\View;
+use src\Model\Delivery;
+use src\App\Util\Pagination;
+use src\App\Routes\Request;
 
 class Home extends Page
 {

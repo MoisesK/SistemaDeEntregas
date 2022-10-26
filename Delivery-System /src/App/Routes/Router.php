@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Routes;
+namespace src\App\Routes;
 
 use \Closure;
 use \Exception;
@@ -43,7 +43,7 @@ class Router
         foreach ($params as $key => $value) {
             if ($value instanceof Closure) {
                 //Método para identificar o parametro passado
-                $params['controller'] = $value;
+                $params['Controllers'] = $value;
                 unset($params[$key]);
             }
         }
@@ -99,12 +99,12 @@ class Router
         try { // Validação de rotas
             $route = $this->getRoute();
 
-            if (!isset($route['controller'])) : throw new Exception("URL não pôde ser processada", 500);
+            if (!isset($route['Controllers'])) : throw new Exception("URL não pôde ser processada", 500);
             endif;
 
             $args = [];
             // Retorna a execução da função
-            return call_user_func_array($route['controller'], $args);
+            return call_user_func_array($route['Controllers'], $args);
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }

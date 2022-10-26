@@ -1,13 +1,10 @@
 <?php
-echo  'public' . __DIR__ . '/../vendor/autoload.php';
-exit;
 
-require 'public' . __DIR__ . '/../vendor/autoload.php';
-exit;
+require '../vendor/autoload.php';
 
-use App\Routes\Router;
-use Model\Helper;
-use App\Util\View;
+use src\App\Routes\Router;
+use src\Model\Helper;
+use src\App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
 
@@ -34,7 +31,7 @@ View::init([
 $obRouter = new Router(URL);
 
 // Inclui as Rotas de Páginas
-include __DIR__ . '/../Routes/Pages.php';
+include '../src/App/Routes/Pages.php';
 
 // Imprime as Páginas
 $obRouter->run()->sendResponse();
