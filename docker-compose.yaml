@@ -18,7 +18,6 @@ services:
     restart: always
     volumes:
     - ./BancodeDados/delivery_system.sql:/docker-entrypoint-initdb.d/setup.sql
-    - db_data:/var/lib/mysqld
     ports:
     - 8081:3306
     environment:
