@@ -1,12 +1,12 @@
 <?php
 
-namespace src\Controllers\Pages;
+namespace Controllers\Pages;
 
-use src\Model\Helper;
-use src\App\Util\View;
-use src\Model\Delivery;
-use src\App\Util\Pagination;
-use src\App\Routes\Request;
+use Model\Helper;
+use App\Util\View;
+use Model\Delivery;
+use App\Util\Pagination;
+use App\Routes\Request;
 
 class Home extends Page
 {
@@ -16,7 +16,7 @@ class Home extends Page
 		$content = View::render('Pages/Home', [
 			"HomeName" => "Lista de Entregas",
 			"DescricaoPage" => "Visão geral de Entregas cadastradas!",
-			"Alerts" => Helper::getSMessage(),
+			"Alerts" => GetSessionMessage(),
 			"Items" => self::getDeliveryItems(),
 			"Pagination" => parent::getPagination(),
 		]);
@@ -77,11 +77,11 @@ class Home extends Page
 
 				$dl->update(
 					$postVars['id-delivery'],
-					Helper::itSanitizeVar($postVars['title-delivery']),
-					Helper::itSanitizeVar($postVars['deadline-delivery']),
-					Helper::itSanitizeVar($postVars['description-delivery']),
-					Helper::itSanitizeVar($postVars['stats-delivery']),
-					Helper::itSanitizeVar($postVars['place-delivery'])
+					ItSanitizeVar($postVars['title-delivery']),
+					ItSanitizeVar($postVars['deadline-delivery']),
+					ItSanitizeVar($postVars['description-delivery']),
+					ItSanitizeVar($postVars['stats-delivery']),
+					ItSanitizeVar($postVars['place-delivery'])
 				);
 
 

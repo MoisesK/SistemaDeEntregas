@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Model;
+namespace Model;
 
 use \WilliamCosta\DatabaseManager\Database;
 

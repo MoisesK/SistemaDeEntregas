@@ -1,11 +1,11 @@
 <?php
 
-namespace src\Controllers\Pages;
+namespace Controllers\Pages;
 
 
-use src\App\Util\View;
-use src\Model\Delivery;
-use src\Model\Helper;
+use App\Util\View;
+use Model\Delivery;
+use Model\Helper;
 
 class RegisterDeliveries extends Page
 {
@@ -15,7 +15,7 @@ class RegisterDeliveries extends Page
     $content = View::render('Pages/RegisterDeliveries', [
       "PageName" => "Registro de Entregas",
       "DescricaoPage" => "Área de cadastro de novas entregas!",
-      "Alerts" => Helper::getSMessage(),
+      "Alerts" => GetSessionMessage(),
       "FormDeliveries" => View::render('Pages/RegisterDeliveries/Form'),
     ]);
 
@@ -28,10 +28,10 @@ class RegisterDeliveries extends Page
     $postVars = $request->getPostVars();
 
     $params = [
-      "title" => Helper::itSanitizeVar($postVars['title-delivery']),
-      "deadline" => Helper::itSanitizeVar($postVars['deadline-delivery']),
-      "description" => Helper::itSanitizeVar($postVars['description-delivery']),
-      "place" => Helper::itSanitizeVar($postVars['place-delivery'])
+      "title" => ItSanitizeVar($postVars['title-delivery']),
+      "deadline" => ItSanitizeVar($postVars['deadline-delivery']),
+      "description" => ItSanitizeVar($postVars['description-delivery']),
+      "place" => ItSanitizeVar($postVars['place-delivery'])
     ];
 
     $newDelivery = new Delivery();

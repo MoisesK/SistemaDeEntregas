@@ -2,10 +2,10 @@
 
 // Gerenciador de páginas
 
-use src\App\Routes\Request;
-use src\App\Routes\Response;
-use src\App\Routes\Router;
-use src\Controllers\Pages;
+use App\Routes\Request;
+use App\Routes\Response;
+use App\Routes\Router;
+use Controllers\Pages;
 
 $request = new Request();
 

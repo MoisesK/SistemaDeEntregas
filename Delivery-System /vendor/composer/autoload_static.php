@@ -4,25 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd75832482c505a17f4ac37fd985c6e58
+class ComposerStaticInitd297b4067391ae362c3bcfc31f8df152
 {
+    public static $files = array (
+        'faa2caa4553c64ca97b21a88115a9d8d' => __DIR__ . '/../..' . '/App/Helpers/GetSessionMessage.php',
+        'd2893971752b047f10b83a83abbe6877' => __DIR__ . '/../..' . '/App/Helpers/Refresh.php',
+        '7864fae131a3b8b44e915e4a653f8211' => __DIR__ . '/../..' . '/App/Helpers/ItSanitizeVar.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        's' => 
-        array (
-            'src\\' => 4,
-        ),
         'W' => 
         array (
             'WilliamCosta\\DotEnv\\' => 20,
             'WilliamCosta\\DatabaseManager\\' => 29,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'src\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'WilliamCosta\\DotEnv\\' => 
         array (
             0 => __DIR__ . '/..' . '/william-costa/dot-env/src',
@@ -31,9 +33,14 @@ class ComposerStaticInitd75832482c505a17f4ac37fd985c6e58
         array (
             0 => __DIR__ . '/..' . '/william-costa/database-manager/src',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Generic_Sniffs_Classes_DuplicateClassNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php',
         'Generic_Sniffs_CodeAnalysis_EmptyStatementSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/EmptyStatementSniff.php',
         'Generic_Sniffs_CodeAnalysis_ForLoopShouldBeWhileLoopSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/ForLoopShouldBeWhileLoopSniff.php',
@@ -274,6 +281,9 @@ class ComposerStaticInitd75832482c505a17f4ac37fd985c6e58
         'Squiz_Sniffs_WhiteSpace_ScopeKeywordSpacingSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/ScopeKeywordSpacingSniff.php',
         'Squiz_Sniffs_WhiteSpace_SemicolonSpacingSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SemicolonSpacingSniff.php',
         'Squiz_Sniffs_WhiteSpace_SuperfluousWhitespaceSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SuperfluousWhitespaceSniff.php',
+        'WilliamCosta\\DatabaseManager\\Database' => __DIR__ . '/..' . '/william-costa/database-manager/src/Database.php',
+        'WilliamCosta\\DatabaseManager\\Pagination' => __DIR__ . '/..' . '/william-costa/database-manager/src/Pagination.php',
+        'WilliamCosta\\DotEnv\\Environment' => __DIR__ . '/..' . '/william-costa/dot-env/src/Environment.php',
         'Zend_Sniffs_Debug_CodeAnalyzerSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
         'Zend_Sniffs_Files_ClosingTagSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
         'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
@@ -282,9 +292,9 @@ class ComposerStaticInitd75832482c505a17f4ac37fd985c6e58
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd75832482c505a17f4ac37fd985c6e58::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$classMap;
 
         }, null, ClassLoader::class);
     }

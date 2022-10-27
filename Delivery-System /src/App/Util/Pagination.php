@@ -1,9 +1,9 @@
 <?php
 
-namespace src\App\Util;
+namespace App\Util;
 
-use src\Model\Delivery;
-use src\App\Routes\Request;
+use Model\Delivery;
+use App\Routes\Request;
 use WilliamCosta\DatabaseManager\Pagination as Pages;
 
 class Pagination

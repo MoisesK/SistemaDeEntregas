@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Controllers\Pages;
+namespace Controllers\Pages;
 
-use src\App\Util\View;
+use App\Util\View;
 
 class About extends Page
 {

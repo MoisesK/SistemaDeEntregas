@@ -1,16 +1,16 @@
 {
-    "name": "moises/mvc",
+    "name": "moises/delivery-system",
     "autoload": {
         "psr-4": {
-            "src\\": "src/"
-        }
+            "App\\": "src\\"
+        },
+        "files":[
+            "App/Helpers/GetSessionMessage.php",
+            "App/Helpers/Refresh.php",
+            "App/Helpers/ItSanitizeVar.php"
+        ]
     },
     "require": {
-        "autoload":{
-            "files":{
-                
-            }
-        },
         "william-costa/dot-env": "^0.1.0",
         "william-costa/database-manager": "^0.1.0"
     },

@@ -1,11 +1,11 @@
 <?php
 
-namespace src\Controllers\Pages;
+namespace Controllers\Pages;
 
-use src\App\Routes\Request;
-use src\App\Routes\Router;
-use src\App\Util\Pagination;
-use src\App\Util\View;
+use App\Routes\Request;
+use App\Routes\Router;
+use App\Util\Pagination;
+use App\Util\View;
 
 class Page
 {

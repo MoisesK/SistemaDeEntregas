@@ -1,17 +1,18 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+echo "teste";
+die;
 
-use src\App\Routes\Router;
-use src\Model\Helper;
-use src\App\Util\View;
+use App\Routes\Router;
+use App\Util\View;
 use WilliamCosta\DatabaseManager\Database;
 use WilliamCosta\DotEnv\Environment;
 
 //Inicia e carrega SESSÃO de mensagens
 session_start();
 
-Helper::getSMessage();
+GetSessionMessage();
 
 // Carrega Variaveis de ambiente
 Environment::load(__DIR__ . '/../');

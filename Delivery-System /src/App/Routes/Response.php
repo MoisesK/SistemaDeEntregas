@@ -1,6 +1,6 @@
 <?php
 
-namespace src\App\Routes;
+namespace App\Routes;
 
 class Response
 {
