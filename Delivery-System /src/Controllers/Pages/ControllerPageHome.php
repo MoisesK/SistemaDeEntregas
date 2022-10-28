@@ -1,14 +1,14 @@
 <?php
 
-namespace Controllers\Pages;
+namespace src\Controllers\Pages;
 
-use Model\Helper;
-use App\Util\View;
-use Model\Delivery;
-use App\Util\Pagination;
-use App\Routes\Request;
+use src\App\Util\Helpers;
+use src\App\Util\View;
+use src\Model\Delivery;
+use src\App\Util\Pagination;
+use src\App\Routes\Request;
 
-class Home extends Page
+class ControllerPageHome extends ControllerPage
 {
 	public static function getHome(): string
 	{
@@ -16,7 +16,7 @@ class Home extends Page
 		$content = View::render('Pages/Home', [
 			"HomeName" => "Lista de Entregas",
 			"DescricaoPage" => "Visão geral de Entregas cadastradas!",
-			"Alerts" => GetSessionMessage(),
+			"Alerts" => Helpers::GetSessionMessage(),
 			"Items" => self::getDeliveryItems(),
 			"Pagination" => parent::getPagination(),
 		]);
@@ -71,20 +71,16 @@ class Home extends Page
 				break;
 
 			case isset($postVars['editButton']):
-
-
 				$dl = new Delivery();
 
 				$dl->update(
 					$postVars['id-delivery'],
-					ItSanitizeVar($postVars['title-delivery']),
-					ItSanitizeVar($postVars['deadline-delivery']),
-					ItSanitizeVar($postVars['description-delivery']),
-					ItSanitizeVar($postVars['stats-delivery']),
-					ItSanitizeVar($postVars['place-delivery'])
+					Helpers::ItSanitizeVar($postVars['title-delivery']),
+					Helpers::ItSanitizeVar($postVars['deadline-delivery']),
+					Helpers::ItSanitizeVar($postVars['description-delivery']),
+					Helpers::ItSanitizeVar($postVars['stats-delivery']),
+					Helpers::ItSanitizeVar($postVars['place-delivery'])
 				);
-
-
 
 				$_SESSION['edit'] = "Item Editado com Sucesso!";
 				break;

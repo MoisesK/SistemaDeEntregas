@@ -1,13 +1,12 @@
 <?php
 
-namespace Controllers\Pages;
+namespace src\Controllers\Pages;
 
-use App\Routes\Request;
-use App\Routes\Router;
-use App\Util\Pagination;
-use App\Util\View;
+use src\App\Routes\Request;
+use src\App\Util\Pagination;
+use src\App\Util\View;
 
-class Page
+class ControllerPage
 {
   public static function getPage($title, $content): string
   {

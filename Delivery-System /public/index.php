@@ -1,18 +1,17 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-echo "teste";
-die;
+require __DIR__ . '/../vendor/autoload.php';
 
-use App\Routes\Router;
-use App\Util\View;
-use WilliamCosta\DatabaseManager\Database;
-use WilliamCosta\DotEnv\Environment;
+use src\App\Routes\Router;
+use src\App\Util\Helpers;
+use \WilliamCosta\DotEnv\Environment;
+use \WilliamCosta\DatabaseManager\Database;
+use src\App\Util\View;
 
 //Inicia e carrega SESSÃO de mensagens
 session_start();
 
-GetSessionMessage();
+Helpers::GetSessionMessage();
 
 // Carrega Variaveis de ambiente
 Environment::load(__DIR__ . '/../');
@@ -31,9 +30,8 @@ View::init([
 // Inicia o roteador
 $obRouter = new Router(URL);
 
-
 // Inclui as Rotas de Páginas
-include '../src/App/Routes/Pages.php';
+include __DIR__ . '/../src/App/Routes/Pages.php';
 
 // Imprime as Páginas
 $obRouter->run()->sendResponse();

@@ -4,27 +4,25 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd297b4067391ae362c3bcfc31f8df152
+class ComposerStaticInitdb77da9691e7369c54dfae840f009ce5
 {
-    public static $files = array (
-        'faa2caa4553c64ca97b21a88115a9d8d' => __DIR__ . '/../..' . '/App/Helpers/GetSessionMessage.php',
-        'd2893971752b047f10b83a83abbe6877' => __DIR__ . '/../..' . '/App/Helpers/Refresh.php',
-        '7864fae131a3b8b44e915e4a653f8211' => __DIR__ . '/../..' . '/App/Helpers/ItSanitizeVar.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
+        's' => 
+        array (
+            'src\\' => 4,
+        ),
         'W' => 
         array (
             'WilliamCosta\\DotEnv\\' => 20,
             'WilliamCosta\\DatabaseManager\\' => 29,
         ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'src\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'WilliamCosta\\DotEnv\\' => 
         array (
             0 => __DIR__ . '/..' . '/william-costa/dot-env/src',
@@ -32,10 +30,6 @@ class ComposerStaticInitd297b4067391ae362c3bcfc31f8df152
         'WilliamCosta\\DatabaseManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/william-costa/database-manager/src',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
@@ -287,14 +281,17 @@ class ComposerStaticInitd297b4067391ae362c3bcfc31f8df152
         'Zend_Sniffs_Debug_CodeAnalyzerSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
         'Zend_Sniffs_Files_ClosingTagSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
         'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
+        'src\\App\\Util\\Helpers' => __DIR__ . '/../..' . '/src/App/Util/Helpers.php',
+        'src\\App\\Util\\Pagination' => __DIR__ . '/../..' . '/src/App/Util/Pagination.php',
+        'src\\App\\Util\\View' => __DIR__ . '/../..' . '/src/App/Util/View.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd297b4067391ae362c3bcfc31f8df152::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdb77da9691e7369c54dfae840f009ce5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdb77da9691e7369c54dfae840f009ce5::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitdb77da9691e7369c54dfae840f009ce5::$classMap;
 
         }, null, ClassLoader::class);
     }

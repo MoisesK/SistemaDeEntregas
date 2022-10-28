@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Routes;
+namespace src\App\Routes;
 
 use \Closure;
 use \Exception;
@@ -9,7 +9,7 @@ class Router
 {
     private string $url;
     private mixed $prefix;
-    private array $routes;
+    private array $routes = [];
     private Request $request;
 
     public function __construct(string $url)
@@ -68,7 +68,6 @@ class Router
     {    // Retorna array com dados da rota atual e valida a rota
 
         $uri = $this->request->getUri();
-
         $xUri = strlen($this->getPrefix()) ? explode($this->getPrefix(), $uri) : [$uri];
 
         //URI sem Prefixo
@@ -80,8 +79,10 @@ class Router
         foreach ($this->routes as $patternroute => $methods) {
             // Verifica se a URI bate com o Padrão
             if (preg_match($patternroute, $uriSemPre)) {
+
                 // Verificão de método
                 if ($methods[$httpMethod]) {
+
                     // Retorno dos Parametros da Rota
                     return $methods[$httpMethod];
                 }

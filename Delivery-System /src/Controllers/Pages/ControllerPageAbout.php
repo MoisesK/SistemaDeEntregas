@@ -1,10 +1,10 @@
 <?php
 
-namespace Controllers\Pages;
+namespace src\Controllers\Pages;
 
-use App\Util\View;
+use src\App\Util\View;
 
-class About extends Page
+class ControllerPageAbout extends ControllerPage
 {
   public static function getAbout(): string
   {

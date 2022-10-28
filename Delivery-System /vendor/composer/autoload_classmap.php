@@ -253,4 +253,7 @@ return array(
     'Zend_Sniffs_Debug_CodeAnalyzerSniff' => $vendorDir . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
     'Zend_Sniffs_Files_ClosingTagSniff' => $vendorDir . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
     'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => $vendorDir . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
+    'src\\App\\Util\\Helpers' => $baseDir . '/src/App/Util/Helpers.php',
+    'src\\App\\Util\\Pagination' => $baseDir . '/src/App/Util/Pagination.php',
+    'src\\App\\Util\\View' => $baseDir . '/src/App/Util/View.php',
 );

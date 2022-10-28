@@ -3,7 +3,7 @@
         'name' => 'moises/delivery-system',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '28bdd179ad031599feb24fb20ba7664c511905e6',
+        'reference' => '7d27f7e5d9df3ce621625443c16a087ae49128ce',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'moises/delivery-system' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '28bdd179ad031599feb24fb20ba7664c511905e6',
+            'reference' => '7d27f7e5d9df3ce621625443c16a087ae49128ce',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
