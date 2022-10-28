@@ -14,7 +14,7 @@ class HomeController extends Controller
 	public static function getHome(): string
 	{
 		//Metodo que retornar o conteúdo(View) da PÁGINA HOME
-		$content = View::render('Pages/Home', [
+		$content = View::render('home/home', [
 			"HomeName" => "Lista de Entregas",
 			"DescricaoPage" => "Visão geral de Entregas cadastradas!",
 			"Alerts" => Helpers::getSessionMessage(),
@@ -34,18 +34,18 @@ class HomeController extends Controller
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
 
-			$items .= View::render('Pages/Home/Items', [
+			$items .= View::render('home/home/items', [
 				"Deadline" => date("d/m/yy" . " á\s " . "H:i", strtotime($obDelivery->getDeadline())),
 				"Title" => $obDelivery->getTitle(),
 				"Description" => $obDelivery->getDescript(),
 				"Place" => $obDelivery->getPlace(),
 				"Stats" => $obDelivery->getStats(),
-				"Actions" => View::render('Pages/Home/Actions', [
-					"ButtonDelete" => View::render('Modals/ModalDelete', [
+				"Actions" => View::render('home/home/actions', [
+					"ButtonDelete" => View::render('modals/modalDelete', [
 						"id" => $obDelivery->getId(),
 						"title" => $obDelivery->getTitle()
 					]),
-					"ButtonEdit" => View::render('Modals/ModalEdit', [
+					"ButtonEdit" => View::render('modals/modalEdit', [
 						"id" => $obDelivery->getId(),
 						"deadline-delivery" => date($obDelivery->getDeadline()),
 						"title-delivery" => $obDelivery->getTitle(),

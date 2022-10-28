@@ -11,7 +11,7 @@ class Controller
   public static function getPage($title, $content): string
   {
     //Método responsável por retornar o conteúdo(VIEW) da página genérica.
-    return View::render('Pages/Page', [
+    return View::render('page', [
       "title" => $title,
       "header" => self::getHeader(),
       "content" => $content,
@@ -37,25 +37,25 @@ class Controller
       $queryParams['page'] = $page['page'];
       $link = "?" . http_build_query($queryParams);
 
-      $links .= View::render('Pages/Pagination/Link', [
+      $links .= View::render('pagination/link', [
         "page" => $page['page'],
         "link" => $link,
         'active' => $page['current'] ? 'active' : ''
       ]);
     }
 
-    return View::render('Pages/Pagination/Box', [
+    return View::render('pagination/box', [
       "links" => $links
     ]);
   }
 
   private static function getHeader(): string
   {
-    return View::render("Pages/Header");
+    return View::render("header");
   }
 
   private static function getFooter(): string
   {
-    return View::render("Pages/Footer");
+    return View::render("footer");
   }
 }

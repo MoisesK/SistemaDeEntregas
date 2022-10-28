@@ -14,11 +14,11 @@ class RegisterDeliveriesController extends Controller
 
   public static function getRegisterDeliveries(): string
   { //Metodo que retornar o conteúdo(View) da PÁGINA Cadastro;
-    $content = View::render('Pages/RegisterDeliveries', [
+    $content = View::render('registerDeliveries/registerDeliveries', [
       "PageName" => "Registro de Entregas",
       "DescricaoPage" => "Área de cadastro de novas entregas!",
       "Alerts" => Helpers::getSessionMessage(),
-      "FormDeliveries" => View::render('Pages/RegisterDeliveries/Form'),
+      "FormDeliveries" => View::render('registerDeliveries/form'),
     ]);
 
     return parent::getPage("Cadastrar Entregas > E2000", $content);
