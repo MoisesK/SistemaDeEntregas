@@ -34,6 +34,7 @@ class ComposerStaticInita6ccfabd4150657145736ef452dd9f9a
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Generic_Sniffs_Classes_DuplicateClassNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php',
         'Generic_Sniffs_CodeAnalysis_EmptyStatementSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/EmptyStatementSniff.php',
         'Generic_Sniffs_CodeAnalysis_ForLoopShouldBeWhileLoopSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/ForLoopShouldBeWhileLoopSniff.php',
@@ -280,16 +281,16 @@ class ComposerStaticInita6ccfabd4150657145736ef452dd9f9a
         'Zend_Sniffs_Debug_CodeAnalyzerSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
         'Zend_Sniffs_Files_ClosingTagSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
         'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
+        'src\\App\\Controller\\Controller' => __DIR__ . '/../..' . '/src/App/Controller/Controller.php',
         'src\\App\\Routes\\Request' => __DIR__ . '/../..' . '/src/App/Routes/Request.php',
         'src\\App\\Routes\\Response' => __DIR__ . '/../..' . '/src/App/Routes/Response.php',
         'src\\App\\Routes\\Router' => __DIR__ . '/../..' . '/src/App/Routes/Router.php',
         'src\\App\\Util\\Helpers' => __DIR__ . '/../..' . '/src/App/Util/Helpers.php',
         'src\\App\\Util\\Pagination' => __DIR__ . '/../..' . '/src/App/Util/Pagination.php',
         'src\\App\\Util\\View' => __DIR__ . '/../..' . '/src/App/Util/View.php',
-        'src\\Controllers\\PageAboutController' => __DIR__ . '/../..' . '/src/Controllers/PageAboutController.php',
-        'src\\Controllers\\PageController' => __DIR__ . '/../..' . '/src/Controllers/PageController.php',
-        'src\\Controllers\\PageHomeController' => __DIR__ . '/../..' . '/src/Controllers/PageHomeController.php',
-        'src\\Controllers\\PageRegisterDeliveriesController' => __DIR__ . '/../..' . '/src/Controllers/PageRegisterDeliveriesController.php',
+        'src\\Controllers\\AboutController' => __DIR__ . '/../..' . '/src/Controllers/AboutController.php',
+        'src\\Controllers\\HomeController' => __DIR__ . '/../..' . '/src/Controllers/HomeController.php',
+        'src\\Controllers\\RegisterDeliveriesController' => __DIR__ . '/../..' . '/src/Controllers/RegisterDeliveriesController.php',
         'src\\Model\\Delivery' => __DIR__ . '/../..' . '/src/Model/Delivery.php',
     );
 

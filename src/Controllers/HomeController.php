@@ -34,13 +34,13 @@ class HomeController extends Controller
 		// Renderiza os Items
 		while ($obDelivery = $results->fetchObject(Delivery::class)) {
 
-			$items .= View::render('home/home/items', [
+			$items .= View::render('home/items', [
 				"Deadline" => date("d/m/yy" . " á\s " . "H:i", strtotime($obDelivery->getDeadline())),
 				"Title" => $obDelivery->getTitle(),
 				"Description" => $obDelivery->getDescript(),
 				"Place" => $obDelivery->getPlace(),
 				"Stats" => $obDelivery->getStats(),
-				"Actions" => View::render('home/home/actions', [
+				"Actions" => View::render('home/actions', [
 					"ButtonDelete" => View::render('modals/modalDelete', [
 						"id" => $obDelivery->getId(),
 						"title" => $obDelivery->getTitle()

@@ -101,7 +101,7 @@ class Delivery
 
 	public function update(int $id, $title, $deadline, $descri, $stats, $pla): bool
 	{
-		$success = (new Database('deliveries'))->update($id, [
+		$success = (new Database('deliveries'))->update("id=" . $id, [
 			"title" => $title,
 			"deadline" => $deadline,
 			"descript" => $descri,
