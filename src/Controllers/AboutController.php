@@ -3,8 +3,9 @@
 namespace src\Controllers;
 
 use src\App\Util\View;
+use src\App\Controller\Controller;
 
-class PageAboutController extends PageController
+class AboutController extends Controller
 {
   public static function getAbout(): string
   {

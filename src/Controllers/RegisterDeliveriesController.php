@@ -6,8 +6,10 @@ namespace src\Controllers;
 use src\App\Util\View;
 use src\Model\Delivery;
 use src\App\Util\Helpers;
+use src\App\Controller\Controller;
 
-class PageRegisterDeliveriesController extends PageController
+
+class RegisterDeliveriesController extends Controller
 {
 
   public static function getRegisterDeliveries(): string

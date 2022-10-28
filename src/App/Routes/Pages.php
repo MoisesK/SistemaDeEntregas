@@ -4,9 +4,9 @@ namespace src\App\Routes;
 
 // Gerenciador de páginas
 
-use src\Controllers\PageAboutController;
-use src\Controllers\PageHomeController;
-use src\Controllers\PageRegisterDeliveriesController;
+use src\Controllers\AboutController;
+use src\Controllers\HomeController;
+use src\Controllers\RegisterDeliveriesController;
 
 
 $request = new Request();
@@ -14,7 +14,7 @@ $request = new Request();
 // ROTA HOME
 $obRouter->get('/', [
     function () {
-        return new Response(200, PageHomeController::getHome());
+        return new Response(200, HomeController::getHome());
     }
 ]);
 
@@ -22,7 +22,7 @@ $obRouter->get('/', [
 $obRouter->post('/', [
     function () {
         $request = new Request();
-        return new Response(200, PageHomeController::actionsDelivery($request));
+        return new Response(200, HomeController::actionsDelivery($request));
     }
 ]);
 
@@ -31,7 +31,7 @@ $obRouter->post('/', [
 // ROTA SOBRE
 $obRouter->get('/about', [
     function () {
-        return new Response(200, PageAboutController::getAbout());
+        return new Response(200, AboutController::getAbout());
     }
 
 ]);
@@ -42,7 +42,7 @@ $obRouter->get('/about', [
 $obRouter->get('/newdelivery', [
     function () {
         $request = new Request();
-        return new Response(200, PageRegisterDeliveriesController::getRegisterDeliveries($request));
+        return new Response(200, RegisterDeliveriesController::getRegisterDeliveries($request));
     }
 ]);
 
@@ -50,6 +50,6 @@ $obRouter->get('/newdelivery', [
 $obRouter->post('/newdelivery', [
     function () {
         $request = new Request();
-        return new Response(200, PageRegisterDeliveriesController::insertDelivery($request));
+        return new Response(200, RegisterDeliveriesController::insertDelivery($request));
     }
 ]);

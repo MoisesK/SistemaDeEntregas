@@ -7,8 +7,9 @@ use src\App\Util\View;
 use src\Model\Delivery;
 use src\App\Util\Pagination;
 use src\App\Routes\Request;
+use src\App\Controller\Controller;
 
-class PageHomeController extends PageController
+class HomeController extends Controller
 {
 	public static function getHome(): string
 	{
